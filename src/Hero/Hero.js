@@ -48,13 +48,45 @@ function Hero(){
 
             <div className="hero-image">
 
-                <div className="circle">
 
-                </div>
+    <div className="circle">
 
 
-            </div>
+        <div className="card card1">
+            React
+        </div>
 
+
+        <div className="card card2">
+            UX/UI
+        </div>
+
+
+        <div className="card card3">
+            IoT
+        </div>
+
+
+    </div>
+
+
+
+    <div className="keywords">
+
+
+        <span>Design</span>
+
+        <span>Develop</span>
+
+        <span>Learn</span>
+
+        <span>Repeat</span>
+
+
+    </div>
+
+
+</div>
 
 
         </section>

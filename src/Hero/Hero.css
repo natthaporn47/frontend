@@ -101,3 +101,90 @@
 
 
 }
+
+.circle{
+
+    position:relative;
+
+    width:380px;
+
+    height:380px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+}
+
+
+.card{
+
+    position:absolute;
+
+    background:white;
+
+    padding:15px 25px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+    font-weight:bold;
+
+}
+
+
+/* การ์ดแต่ละใบ */
+
+.card1{
+
+    top:40px;
+
+    right:-40px;
+
+}
+
+
+
+.card2{
+
+    left:-50px;
+
+    top:150px;
+
+}
+
+
+
+.card3{
+
+    bottom:40px;
+
+    right:20px;
+
+}
+
+
+
+.keywords{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-left:30px;
+
+}
+
+
+.keywords span{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#555;
+
+}

@@ -1,0 +1,721 @@
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.contact-page {
+
+  min-height: calc(100vh - 100px);
+
+  padding: 55px 7%;
+
+  display: grid;
+
+  grid-template-columns: 43% 57%;
+
+  gap: 20px;
+
+  background:
+
+    radial-gradient(
+      circle at 10% 90%,
+      #f8ebe6 0,
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 90% 10%,
+      #f5e9e1 0,
+      transparent 25%
+    ),
+
+    #fcfaf7;
+
+  overflow: hidden;
+
+}
+
+
+/* =========================
+   LEFT
+========================= */
+
+.contact-content {
+
+  position: relative;
+
+  z-index: 5;
+
+}
+
+
+.contact-mark {
+
+  font-size: 24px;
+
+  font-weight: 800;
+
+  color: #101828;
+
+  margin-bottom: 35px;
+
+}
+
+
+.contact-content h1 {
+
+  margin: 0;
+
+  font-size: clamp(55px, 6vw, 85px);
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+
+  color: #101828;
+
+}
+
+
+.contact-content h1 span {
+
+  color: #21457a;
+
+}
+
+
+.contact-intro {
+
+  margin-top: 30px;
+
+  font-size: 19px;
+
+  color: #344054;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================
+   CONTACT LIST
+========================= */
+
+.contact-list {
+
+  margin-top: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+}
+
+
+.contact-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+}
+
+
+.contact-icon {
+
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #101828;
+
+  color: white;
+
+  border-radius: 10px;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  flex-shrink: 0;
+
+}
+
+
+.contact-item span {
+
+  display: block;
+
+  font-size: 11px;
+
+  color: #98a2b3;
+
+  margin-bottom: 2px;
+
+}
+
+
+.contact-item p {
+
+  margin: 0;
+
+  font-size: 15px;
+
+  color: #1d2939;
+
+}
+
+
+/* =========================
+   RIGHT VISUAL
+========================= */
+
+.contact-visual {
+
+  position: relative;
+
+  min-height: 600px;
+
+}
+
+
+/* =========================
+   MONITOR
+========================= */
+
+.monitor {
+
+  position: absolute;
+
+  width: 530px;
+
+  height: 360px;
+
+  left: 80px;
+
+  top: 120px;
+
+  padding: 18px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #53655c,
+      #26372f
+    );
+
+  border-radius: 28px;
+
+  box-shadow:
+
+    0 35px 50px rgba(0,0,0,0.2);
+
+  transform: rotate(-1deg);
+
+  z-index: 5;
+
+}
+
+
+/* monitor frame */
+
+.monitor::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 40%;
+
+  bottom: -35px;
+
+  width: 110px;
+
+  height: 40px;
+
+  background: #37463f;
+
+  border-radius: 0 0 20px 20px;
+
+}
+
+
+/* top */
+
+.monitor-top {
+
+  height: 20px;
+
+  display: flex;
+
+  gap: 6px;
+
+  padding-left: 8px;
+
+}
+
+
+.monitor-top span {
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #91a092;
+
+}
+
+
+/* screen */
+
+.screen {
+
+  height: calc(100% - 20px);
+
+  padding: 35px;
+
+  border-radius: 15px;
+
+  background:
+
+    radial-gradient(
+      circle at center,
+      #16291e,
+      #08120d
+    );
+
+  box-shadow:
+
+    inset 0 0 30px rgba(0,0,0,0.7);
+
+  color: #d7e8b8;
+
+  font-family: monospace;
+
+}
+
+
+/* code */
+
+.code-line {
+
+  font-size: 25px;
+
+  color: #d9e8bb;
+
+  margin-bottom: 20px;
+
+}
+
+
+.code-line-divider {
+
+  width: 100%;
+
+  height: 1px;
+
+  background: rgba(200,220,180,0.35);
+
+  margin-bottom: 25px;
+
+}
+
+
+.message-text {
+
+  font-size: 22px;
+
+  line-height: 1.7;
+
+}
+
+
+.cursor {
+
+  margin-top: 8px;
+
+  font-size: 25px;
+
+  animation: blink 1s infinite;
+
+}
+
+
+@keyframes blink {
+
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================
+   PAPER
+========================= */
+
+.paper-note {
+
+  position: absolute;
+
+  top: 45px;
+
+  right: 160px;
+
+  width: 190px;
+
+  height: 130px;
+
+  padding: 20px;
+
+  background: #ead3b9;
+
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.12);
+
+  transform:
+    rotate(-7deg);
+
+  z-index: 10;
+
+}
+
+
+.paper-note::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 25px;
+
+  height: 40px;
+
+  border: 3px solid #b8a08a;
+
+  border-radius: 20px;
+
+  left: 20px;
+
+  top: -20px;
+
+}
+
+
+.paper-logo {
+
+  font-size: 30px;
+
+  font-weight: 800;
+
+}
+
+
+.paper-title {
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  margin-top: 5px;
+
+}
+
+
+.paper-text {
+
+  position: absolute;
+
+  right: 15px;
+
+  bottom: 12px;
+
+  font-family: cursive;
+
+  font-size: 20px;
+
+}
+
+
+/* =========================
+   PLANT
+========================= */
+
+.plant {
+
+  position: absolute;
+
+  right: 10px;
+
+  bottom: 25px;
+
+  width: 150px;
+
+  height: 390px;
+
+  z-index: 3;
+
+}
+
+
+.stem {
+
+  position: absolute;
+
+  width: 8px;
+
+  height: 320px;
+
+  background: #526c4e;
+
+  left: 70px;
+
+  bottom: 0;
+
+  border-radius: 20px;
+
+}
+
+
+.leaf {
+
+  position: absolute;
+
+  width: 75px;
+
+  height: 125px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #5d8157,
+      #315338
+    );
+
+  border-radius:
+
+    100% 0
+    100% 0;
+
+}
+
+
+.leaf1 {
+
+  left: 5px;
+
+  top: 120px;
+
+  transform: rotate(-35deg);
+
+}
+
+
+.leaf2 {
+
+  right: 0;
+
+  top: 50px;
+
+  transform: rotate(35deg);
+
+}
+
+
+.leaf3 {
+
+  left: 15px;
+
+  top: 210px;
+
+  transform: rotate(-25deg);
+
+}
+
+
+.leaf4 {
+
+  right: 5px;
+
+  top: 180px;
+
+  transform: rotate(30deg);
+
+}
+
+
+/* =========================
+   LIGHT CABLE
+========================= */
+
+.light-cable {
+
+  position: absolute;
+
+  width: 520px;
+
+  height: 250px;
+
+  right: 0;
+
+  bottom: 0;
+
+  border-bottom:
+
+    4px solid #f6d49b;
+
+  border-radius: 50%;
+
+  transform: rotate(8deg);
+
+  filter:
+
+    drop-shadow(
+      0 0 8px #f6d49b
+    );
+
+}
+
+
+/* =========================
+   DECORATIVE TEXT
+========================= */
+
+.thank-you {
+
+  position: absolute;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  font-family: cursive;
+
+  font-size: 23px;
+
+  line-height: 1.2;
+
+  color: #17243a;
+
+  transform: rotate(-5deg);
+
+  z-index: 20;
+
+}
+
+
+.creative-note {
+
+  position: absolute;
+
+  left: 10px;
+
+  top: 30px;
+
+  font-family: cursive;
+
+  font-size: 20px;
+
+  color: #17243a;
+
+  transform: rotate(-5deg);
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+  .contact-page {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .contact-visual {
+
+    min-height: 550px;
+
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .contact-page {
+
+    padding: 35px 25px;
+
+  }
+
+
+  .contact-content h1 {
+
+    font-size: 55px;
+
+  }
+
+
+  .monitor {
+
+    left: 0;
+
+    width: 90%;
+
+    height: 300px;
+
+  }
+
+
+  .paper-note {
+
+    right: 10px;
+
+  }
+
+
+  .plant {
+
+    display: none;
+
+  }
+
+
+  .light-cable {
+
+    width: 300px;
+
+  }
+
+}
