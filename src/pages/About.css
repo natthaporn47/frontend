@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+}
+
+.about-page {
+  min-height: calc(100vh - 5rem);
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 6vw, 5rem);
+  overflow: hidden;
+  color: #252321;
+  background:
+    radial-gradient(ellipse at 6% 96%, rgba(240, 215, 197, 0.45), transparent 24%),
+    radial-gradient(ellipse at 95% 16%, rgba(218, 232, 213, 0.55), transparent 25%),
+    #faf9f5;
+}
+
+.about-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  column-gap: clamp(1rem, 2vw, 2rem);
+  max-width: 90rem;
+  margin: auto;
+}
+
+.about-copy {
+  position: relative;
+  grid-column: span 4;
+  z-index: 1;
+}
+
+.about-copy h1 {
+  margin: 0 0 0.5rem;
+  color: #1d1d1b;
+  font-size: clamp(2.75rem, 5vw, 4.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.about-copy h1::after {
+  display: inline-block;
+  margin-left: 0.75rem;
+  color: #777066;
+  content: "✧";
+  font-size: 1.4375rem;
+  vertical-align: top;
+}
+
+.about-copy > h2 {
+  margin: 0 0 0.875rem;
+  color: #49515c;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 500;
+}
+
+.about-copy > p {
+  max-width: 27rem;
+  margin: 0;
+  color: #45433f;
+  font-size: clamp(0.875rem, 1.15vw, 1rem);
+  line-height: 1.8;
+}
+
+.about-quote {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 25rem;
+  margin: clamp(1rem, 3vw, 2rem) 0 !important;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5dfd4;
+  border-radius: 0.5rem;
+  background: rgba(255, 253, 248, 0.88);
+  color: #383632 !important;
+  font-family: Georgia, serif;
+  font-size: clamp(0.875rem, 1.25vw, 1rem) !important;
+  font-style: italic;
+  line-height: 1.45 !important;
+}
+
+.about-quote span {
+  color: #d8946e;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.about-highlights {
+  grid-column: span 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 27rem;
+}
+
+.about-highlights span {
+  padding: 0.375rem 0.625rem;
+  border: 1px solid #e5dfd4;
+  border-radius: 1rem;
+  background: rgba(255, 253, 248, 0.85);
+  color: #5c625c;
+  font-size: 0.75rem;
+}
+
+.basic-information {
+  grid-column: span 5;
+  min-width: 0;
+  padding: clamp(1rem, 2.2vw, 1.75rem);
+  border: 1px solid #e5e2dc;
+  border-radius: 0.875rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0.75rem 2rem rgba(49, 55, 49, 0.07);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.75rem;
+  padding: 0.375rem 0.625rem;
+  border-radius: 2rem;
+  background: #f0f3f7;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  color: #333d4c;
+  font-size: clamp(0.9375rem, 1.4vw, 1.125rem);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.panel-heading-icon {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e2e9f2;
+  color: #344e78;
+  font-size: 1.125rem;
+}
+
+.information-list {
+  margin: 0;
+}
+
+.information-row {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(4.5rem, 0.8fr) minmax(0, 1.5fr);
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid #efede9;
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+}
+
+.information-row:last-child { border-bottom: 0; }
+
+.information-row dt { color: #6d7580; }
+
+.information-row dd {
+  min-width: 0;
+  margin: 0;
+  color: #354050;
+  overflow-wrap: anywhere;
+  line-height: 1.55;
+}
+
+.information-icon {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.icon-name { background: #e9eff7; color: #536a8b; }
+.icon-education { background: #f7eadc; color: #ac7852; }
+.icon-role { background: #e7eee5; color: #607b5c; }
+.icon-interests { background: #f8e7e4; color: #b36f6c; }
+.icon-location { background: #e6f0e8; color: #62856c; }
+
+.career-column {
+  position: relative;
+  grid-column: span 3;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: clamp(23rem, 32vw, 29rem);
+}
+
+.about-sticky-note {
+  position: absolute;
+  top: 1%;
+  right: 8%;
+  width: min(88%, 13rem);
+  padding: clamp(0.875rem, 1.5vw, 1.25rem);
+  background: #f1e3d5;
+  box-shadow: 0 0.5rem 1rem rgba(58, 46, 31, 0.12);
+  color: #4b505a;
+  font-family: Georgia, serif;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-style: italic;
+  line-height: 1.2;
+  transform: rotate(5deg);
+}
+
+.about-sticky-note::before {
+  position: absolute;
+  top: -0.625rem;
+  left: 1.5rem;
+  width: 0.625rem;
+  height: 1.25rem;
+  border: 0.125rem solid #c9a995;
+  border-radius: 1rem;
+  content: "";
+  transform: rotate(-10deg);
+}
+
+.about-sticky-note span { color: #a9645c; }
+
+.career-goal {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(1rem, 1.8vw, 1.375rem);
+  border: 1px solid #e5e2dc;
+  border-radius: 0.875rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0.75rem 2rem rgba(49, 55, 49, 0.08);
+}
+
+.career-goal .panel-heading { background: #f1f3f5; }
+.career-goal .career-icon { background: #e5ebf2; color: #435e7f; }
+
+.career-goal p {
+  margin: 0.75rem 0 0;
+  color: #505967;
+  font-size: clamp(0.75rem, 0.95vw, 0.875rem);
+  line-height: 1.8;
+}
+
+.career-link {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  aspect-ratio: 1;
+  margin: 0.5rem 0 0 auto;
+  border-radius: 50%;
+  color: #37465c;
+  font-size: 1.375rem;
+  text-decoration: none;
+}
+
+.career-link:hover { background: #eef1f4; }
+
+@media (max-width: 68rem) {
+  .about-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .about-copy { grid-column: 1 / -1; }
+  .about-highlights { max-width: 38rem; }
+  .basic-information { grid-column: 1; }
+  .career-column { grid-column: 2; min-height: 26rem; }
+}
+
+@media (max-width: 42rem) {
+  .about-page { padding: 1.25rem 1rem 2rem; }
+
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.5rem;
+  }
+
+  .about-copy,
+  .basic-information,
+  .career-column { grid-column: 1; }
+
+  .about-highlights { gap: 0.375rem; }
+
+  .about-highlights span {
+    padding: 0.3125rem 0.5rem;
+    font-size: 0.6875rem;
+  }
+
+  .information-row {
+    grid-template-columns: 2rem minmax(4rem, 0.7fr) minmax(0, 1.5fr);
+    gap: 0.5rem;
+  }
+
+  .career-column { min-height: 25rem; }
+}
