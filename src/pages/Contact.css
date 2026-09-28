@@ -334,7 +334,7 @@
 /* Shared Home visual language */
 .contact-page {
   min-height: calc(100vh - 5rem);
-  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
+  padding: clamp(2rem, 5vw, 4.5rem) 130px clamp(2.5rem, 5vw, 4rem);
   color: #151e32;
   background: linear-gradient(160deg, #fbfaf8, #fff 65%, #f6f4f0);
 }
@@ -357,4 +357,8 @@
 .contact-item p, .contact-item a { color: #29354a; }
 .paper-note { background: #f2e2d4; box-shadow: 0 1rem 2.5rem rgba(34, 42, 53, 0.12); }
 .thank-you { border-color: #e1e5e9; color: #28508d; }
+
+@media (max-width: 43.75rem) {
+  .contact-page { padding: 35px 25px; }
+}
 

@@ -4,7 +4,7 @@
 
 .about-page {
   min-height: calc(100vh - 5rem);
-  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 6vw, 5rem);
+  padding: clamp(2rem, 5vw, 4.5rem) 130px clamp(2.5rem, 5vw, 4rem);
   overflow: hidden;
   border-top: 1px solid #e8e6df;
   color: #252321;

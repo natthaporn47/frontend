@@ -1,6 +1,6 @@
 .projects-page {
   min-height: calc(100vh - 84px);
-  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 5.5vw, 4.5rem) 3rem;
+  padding: clamp(2rem, 5vw, 4.5rem) 130px clamp(2.5rem, 5vw, 4rem);
   overflow: hidden;
   background:
     radial-gradient(ellipse at 96% 8%, rgba(229, 237, 235, 0.7), transparent 29%),
