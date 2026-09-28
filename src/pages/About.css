@@ -4,7 +4,7 @@
 
 .about-page {
   min-height: calc(100vh - 5rem);
-  padding: clamp(2rem, 5vw, 4.5rem) 130px clamp(2.5rem, 5vw, 4rem);
+  padding: var(--page-top) var(--page-gutter) 2rem;
   overflow: hidden;
   border-top: 1px solid #e8e6df;
   color: #252321;
@@ -339,7 +339,7 @@
 }
 
 @media (max-width: 42rem) {
-  .about-page { padding: 1.25rem 1rem 2rem; }
+  .about-page { padding: 1.25rem var(--page-gutter) 2rem; }
 
   .about-layout {
     grid-template-columns: minmax(0, 1fr);

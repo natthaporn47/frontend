@@ -2,7 +2,7 @@
 
 .skills-page {
 	min-height: calc(100vh - 5rem);
-	padding: clamp(2rem, 5vw, 4.5rem) 130px clamp(2.5rem, 5vw, 4rem);
+	padding: var(--page-top) var(--page-gutter) 3rem;
 	overflow: hidden;
 	color: #151e32;
 	background: linear-gradient(160deg, #fbfaf8, #fff 65%, #f6f4f0);
@@ -170,7 +170,7 @@
 }
 
 @media (max-width: 42rem) {
-	.skills-page { padding: 1.5rem 1rem 2rem; }
+	.skills-page { padding: 1.5rem var(--page-gutter) 2rem; }
 	.skills-hero { display: block; min-height: 0; }
 	.skills-heading h1 { font-size: clamp(2.5rem, 12vw, 3.75rem); }
 	.skills-visual { min-height: 13rem; margin: 1.5rem -1rem 0; }

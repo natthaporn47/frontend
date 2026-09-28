@@ -1,6 +1,6 @@
 .projects-page {
   min-height: calc(100vh - 84px);
-  padding: clamp(2rem, 5vw, 4.5rem) 130px clamp(2.5rem, 5vw, 4rem);
+  padding: var(--page-top) var(--page-gutter) 3rem;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 96% 8%, rgba(229, 237, 235, 0.7), transparent 29%),
@@ -299,13 +299,13 @@
 }
 
 @media (max-width: 900px) {
-  .projects-page { padding-right: 5%; padding-left: 5%; }
+  .projects-page { padding-right: var(--page-gutter); padding-left: var(--page-gutter); }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-preview { height: 165px; }
 }
 
 @media (max-width: 580px) {
-  .projects-page { padding: 20px 5% 32px; }
+  .projects-page { padding: 20px var(--page-gutter) 32px; }
   .projects-heading { display: block; margin-bottom: 1.5rem; }
   .projects-summary { min-width: 0; margin-top: 1.5rem; padding-left: 1rem; }
   .project-grid { grid-template-columns: 1fr; gap: 13px; }
