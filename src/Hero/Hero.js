@@ -15,9 +15,9 @@ function Hero() {
                     </h1>
                     <h2>Computer Engineering Student</h2>
                     <p className="hero-description">
-                        King Mongkut's University of Technology North Bangkok
+                        King Mongkut's University of Technology North Bangkok <br />
                     </p>
-                    <p className="hero-quote">“I enjoy turning ideas into simple and thoughtful experiences.”</p>
+                    <p className="hero-quote">“Always ready to learn, explore new ideas, and grow through every opportunity.”</p>
                     <Link className="hero-cta" to="/about">
                         Explore My Journey <span aria-hidden="true">→</span>
                     </Link>
@@ -25,7 +25,13 @@ function Hero() {
                         <a href="https://github.com/natthaporn47" target="_blank" rel="noreferrer" aria-label="GitHub">
                             <Icon icon="cib:github" aria-hidden="true" />
                         </a>
-                        <a href="mailto:naththaphrnh@gmail.com" aria-label="Email">
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=naththaphrnh@gmail.com"
+                            aria-label="Email Nattaporn"
+                            title="Email Nattaporn"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <Icon icon="clarity:email-outline-badged" aria-hidden="true" />
                         </a>
                         <Link to="/contact" aria-label="Contact">

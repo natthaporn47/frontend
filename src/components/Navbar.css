@@ -1,9 +1,11 @@
 .navbar {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
   align-items: center;
   gap: clamp(0.5rem, 1.5vw, 1.25rem);
-  padding: clamp(0.875rem, 2vw, 1.5625rem) clamp(1rem, 6vw, 5rem);
+  padding: clamp(0.875rem, 2vw, 1.5625rem) var(--content-gutter);
   border-bottom: 1px solid #eeeeee;
   background: rgba(255, 255, 255, 0.9);
 }

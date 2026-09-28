@@ -1,42 +1,34 @@
-import { useState } from "react";
 import "./Projects.css";
 
 const projects = [
 	{
-		id: "agri",
-		title: "Automatic Agricultural System",
-		category: "Web Development",
-		description: "ระบบจัดการแปลงเกษตรอัตโนมัติ พร้อมติดตามข้อมูลผ่านหน้า Dashboard",
-		tags: ["React", "IoT", "Responsive"],
-		preview: "agri-preview",
-	},
-	{
-		id: "quiz",
-		title: "React Quiz Application",
-		category: "Web Development",
-		description: "เว็บแอปแบบทดสอบที่ช่วยให้การเรียนรู้สนุกและติดตามผลได้ง่ายขึ้น",
-		tags: ["React", "JavaScript", "CSS"],
-		preview: "quiz-preview",
-	},
-	{
-		id: "farm-app",
-		title: "UI/UX Design - Farm App",
-		category: "UI/UX Design",
-		description: "ออกแบบแอปสำหรับเกษตรกร ตั้งแต่สำรวจข้อมูลจนถึงติดตามผลผลิต",
-		tags: ["Figma", "UI/UX", "Prototype"],
+		id: "food-cafe",
+		title: "Food & Cafe Mobile Application",
+		category: "Mobile Application",
+		description: "แอปพลิเคชันมือถือสำหรับค้นหาเมนูอาหาร สั่งอาหาร เครื่องดื่ม และเมนูแนะนำแบบครบจบ",
+		details: "พัฒนาด้วย Flutter และ Dart เชื่อมต่อ REST API และฐานข้อมูล JSON",
+		tags: ["Flutter", "Dart", "REST API", "JSON"],
 		preview: "farm-preview",
 	},
 	{
-		id: "sensor",
-		title: "Smart Sensor Dashboard",
-		category: "IoT / Hardware",
-		description: "แดชบอร์ดแสดงข้อมูลจากเซนเซอร์เพื่อช่วยดูแลสภาพแวดล้อม",
-		tags: ["IoT", "Dashboard", "Hardware"],
-		preview: "sensor-preview",
+		id: "vanvan",
+		title: "VanVan Public Van Management System",
+		category: "Public Transportation",
+		description: "ระบบจัดการรถตู้สาธารณะ ทั้งฝั่งผู้โดยสาร พนักงานขับรถ และผู้ดูแลระบบ",
+		details: "วิเคราะห์ความต้องการของผู้ใช้ ออกแบบ UX พร้อมวางโครงสร้างระบบ",
+		tags: ["Software Engineering", "UML", "SRS"],
+		preview: "quiz-preview",
+	},
+	{
+		id: "agricultural-spraying",
+		title: "Agricultural Spraying Robot Web Application",
+		category: "Web Application",
+		description: "เว็บไซต์ควบคุมและติดตามการทำงานของเรือพ่นสารสำหรับพื้นที่การเกษตร",
+		details: "พัฒนาเว็บไซต์ด้วย React.js ออกแบบหน้า Home, Mission, Map และจัดการข้อมูล",
+		tags: ["React.js", "JavaScript", "CSS"],
+		preview: "agri-preview",
 	},
 ];
-
-const categories = ["All", "Web Development", "IoT / Hardware", "UI/UX Design", "Other"];
 
 function ProjectPreview({ type }) {
 	return (
@@ -78,54 +70,40 @@ function ProjectPreview({ type }) {
 }
 
 function Projects() {
-	const [activeCategory, setActiveCategory] = useState("All");
-	const visibleProjects = activeCategory === "All"
-		? projects.slice(0, 3)
-		: projects.filter((project) => project.category === activeCategory);
-
 	return (
 		<main className="projects-page">
 			<header className="projects-heading">
-				<span className="projects-number">03. Projects</span>
-				<h1>Projects<span className="heading-sparkle">✧</span></h1>
-				<p>โปรเจกต์ที่ได้ลงมือออกแบบ ทดลอง และพัฒนาด้วยตัวเอง</p>
+				<div>
+					<span className="page-kicker">PROJECTS</span>
+					<h1>My <span>Projects.</span></h1>
+					<p>ผลงานที่ได้พัฒนา ทั้งในรายวิชาและโปรเจกต์ส่วนตัว<br />เกี่ยวกับ Web, Mobile Application และ IoT</p>
+				</div>
+				<div className="projects-summary" aria-label="Project summary">
+					<strong>{projects.length}</strong>
+					<span>Projects</span>
+					<p>KEEP LEARNING<br />KEEP BUILDING<br />SOMETHING MEANINGFUL.</p>
+				</div>
 			</header>
 
-			<section className="projects-content" aria-label="Project portfolio">
-				<aside className="project-filters" aria-label="Filter projects">
-					{categories.map((category) => (
-						<button
-							key={category}
-							className={activeCategory === category ? "filter-button active" : "filter-button"}
-							aria-pressed={activeCategory === category}
-							onClick={() => setActiveCategory(category)}
-						>
-							{category}
-						</button>
-					))}
-				</aside>
-
-				<div className="project-grid" aria-live="polite">
-					{visibleProjects.map((project) => (
+			<section className="project-grid" aria-label="Project portfolio">
+				{projects.map((project, index) => (
 						<article className="project-card" key={project.id}>
 							<ProjectPreview type={project.preview} />
 							<div className="project-card-body">
+								<div className="project-card-number">{String(index + 1).padStart(2, "0")}<span /></div>
 								<span className="project-category">{project.category}</span>
 								<h2>{project.title}</h2>
 								<p>{project.description}</p>
+								<p className="project-details">{project.details}</p>
 								<div className="project-tags">
 									{project.tags.map((tag) => <span key={tag}>{tag}</span>)}
 								</div>
-								<span className="project-arrow" aria-hidden="true">↗</span>
+								<span className="project-view">View Details <span aria-hidden="true">→</span></span>
+								<span className="project-arrow" aria-hidden="true">→</span>
 							</div>
 						</article>
-					))}
-					{visibleProjects.length === 0 && (
-						<p className="empty-projects">ยังไม่มีโปรเจกต์ในหมวดหมู่นี้</p>
-					)}
-				</div>
+				))}
 			</section>
-			<p className="projects-note">More projects<br />are on the way <span>↗</span></p>
 		</main>
 	);
 }

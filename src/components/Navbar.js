@@ -28,9 +28,6 @@ function Navbar(){
                 <NavLink to="/skills">
                     Skills
                 </NavLink>
-                <NavLink to="/resume">
-                    Resume
-                </NavLink>
                 <NavLink to="/contact">
                     Contact
                 </NavLink>
