@@ -11,10 +11,8 @@ import About from "./pages/About.js";
 
 
 function App() {
-  const basename = new URL(process.env.PUBLIC_URL || "/", window.location.origin).pathname;
-
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter>
       <Navbar />
 
       <Routes>
