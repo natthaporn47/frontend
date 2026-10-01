@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "https://natthaporn47.github.io/frontend",
   "private": true,
   "dependencies": {
     "@iconify/react": "^6.0.2",

@@ -4,42 +4,40 @@ import "./Skills.css";
 const skillGroups = [
 	{
 		title: "Frontend Development",
-		description: "สร้างหน้าเว็บไซต์และส่วนติดต่อผู้ใช้",
+		description: "พัฒนาหน้าเว็บที่รองรับทุกขนาดหน้าจอ",
 		color: "blue",
-		icons: [["HTML", "logos:html-5"], ["CSS", "logos:css-3"], ["JavaScript", "logos:javascript"], ["React.js", "logos:react"]],
-		points: ["พัฒนาเว็บไซต์ Responsive", "ออกแบบและพัฒนา UI/UX", "สร้างหน้าเว็บด้วย React.js"],
+		icons: [["HTML", "logos:html-5"], ["CSS", "logos:css-3"], ["Bootstrap", "logos:bootstrap"], ["JavaScript", "logos:javascript"], ["React.js", "logos:react"]],
 	},
 	{
 		title: "Backend Development",
-		description: "พัฒนาและจัดการระบบหลังบ้าน",
+		description: "พัฒนา API และจัดการข้อมูล",
 		color: "orange",
-		icons: [["Python", "logos:python"], ["PHP", "logos:php"], ["Node.js", "logos:nodejs-icon"], ["REST API", "mdi:api"]],
-		points: ["พัฒนาและเชื่อมต่อฐานข้อมูล", "สร้างและใช้งาน REST API", "จัดการข้อมูลและระบบหลังบ้าน"],
+		icons: [["Python", "logos:python"], ["PHP", "logos:php"], ["Node.js", "logos:nodejs-icon"], ["REST API", "mdi:api"], ["JSON", "mdi:code-json"]],
 	},
 	{
 		title: "Mobile Development",
-		description: "ออกแบบและพัฒนาแอปมือถือ",
+		description: "พัฒนาแอปมือถือที่ใช้งานได้หลายแพลตฟอร์ม",
 		color: "green",
 		icons: [["Flutter", "logos:flutter"], ["Dart", "logos:dart"]],
-		points: ["พัฒนาแอปพลิเคชันด้วย Flutter", "ออกแบบ UI/UX สำหรับมือถือ", "เชื่อมต่อ API และจัดการข้อมูล"],
 	},
 	{
 		title: "IoT & Embedded System",
-		description: "พัฒนาและเชื่อมต่ออุปกรณ์ IoT",
+		description: "เชื่อมต่อเซนเซอร์และอุปกรณ์สมองกลฝังตัว",
 		color: "purple",
-		icons: [["ESP32", "mdi:chip"], ["Arduino", "simple-icons:arduino"], ["MQTT", "mdi:access-point-network"], ["Node-RED", "simple-icons:nodered"]],
-		points: ["เชื่อมต่อเซนเซอร์และอุปกรณ์ IoT", "ส่งข้อมูลด้วย MQTT", "สร้างระบบควบคุมและแสดงผลผ่านเว็บ"],
+		icons: [["ESP32", "mdi:chip"], ["Arduino", "simple-icons:arduino"], ["DHT22 Sensor", "mdi:thermometer"], ["Raspberry Pi", "logos:raspberry-pi"], ["MQTT", "mdi:access-point-network"], ["Node-RED", "simple-icons:nodered"]],
 	},
 ];
 
 const tools = [
-	["Visual Studio Code", "vscode-icons:file-type-vscode"], ["GitHub", "mdi:github"], ["Figma", "logos:figma"], ["Postman", "logos:postman"],
-	["Firebase", "logos:firebase"], ["Vercel", "logos:vercel"], ["Linux", "logos:linux-tux"], ["Raspberry Pi", "logos:raspberry-pi"],
+	["Visual Studio Code", "vscode-icons:file-type-vscode"], ["GitHub", "mdi:github"], ["Git", "logos:git-icon"],
+	["Firebase", "logos:firebase"],["Supabase", "logos:supabase"], ["Arduino IDE", "simple-icons:arduino"], ["Linux", "logos:linux-tux"],["Azure", "logos:microsoft-azure"],
 ];
 
 const otherSkills = [
-	["UI/UX Design", "mdi:palette-outline"], ["Problem Solving", "mdi:cog-outline"], ["Communication", "mdi:message-processing-outline"],
-	["System Analysis", "mdi:file-document-outline"], ["Time Management", "mdi:clock-outline"], ["Teamwork", "mdi:account-group-outline"], ["Adaptability", "mdi:chart-bar"],
+	["Teamwork", "การทำงานร่วมกับผู้อื่น", "mdi:account-group-outline"],
+	["Time Management", "การจัดลำดับและบริหารเวลา", "mdi:clock-outline"],
+	["Attention to Detail", "ความละเอียดรอบคอบในการทำงาน", "mdi:eye-check-outline"],
+	["Responsibility", "ความรับผิดชอบต่องานที่ได้รับ", "mdi:briefcase-check-outline"],
 ];
 
 function Skills() {
@@ -67,7 +65,6 @@ function Skills() {
 						<div className="skill-group-heading"><span>0{index + 1}</span><h2>{group.title}</h2></div>
 						<p>{group.description}</p>
 						<div className="skill-icons">{group.icons.map(([label, icon]) => <span key={label}><Icon icon={icon} /><small>{label}</small></span>)}</div>
-						<ul>{group.points.map((point) => <li key={point}>{point}</li>)}</ul>
 					</article>
 				))}
 			</section>
@@ -79,7 +76,7 @@ function Skills() {
 				</div>
 				<div className="other-panel">
 					<header><Icon icon="mdi:lightbulb-on-outline" /><div><h2>Other Skills</h2><p>ทักษะอื่น ๆ ที่ช่วยในการทำงาน</p></div></header>
-					<div className="other-list">{otherSkills.map(([label, icon]) => <span key={label}><Icon icon={icon} />{label}</span>)}</div>
+					<div className="other-list">{otherSkills.map(([label, description, icon]) => <span key={label}><Icon icon={icon} /><span><strong>{label}</strong><small>{description}</small></span></span>)}</div>
 				</div>
 			</section>
 		</main>

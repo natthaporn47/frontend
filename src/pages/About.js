@@ -15,19 +15,15 @@ function About() {
 					<h1 id="about-title">About <span>Me</span></h1>
 					<h2>รู้จักฉันให้มากขึ้น</h2>
 					<p>
-						ฉันเป็นนักศึกษาวิศวกรรมคอมพิวเตอร์ที่สนใจ UX/UI Design, Frontend Development
-						และการสร้างเว็บไซต์ที่ใช้งานได้จริง
+						ฉันเป็นนักศึกษาวิศวกรรมคอมพิวเตอร์ที่สนใจทั้งด้านการออกแบบและการพัฒนา
 					</p>
 					<blockquote className="about-quote">
 						<span aria-hidden="true">“</span>
-						Still a student, but always a learner.
+						<div>
+							Keep learning, keep creating, and keep improving.<br />
+							ทุกโปรเจกต์คือโอกาสในการเรียนรู้และพัฒนาตัวเอง
+						</div>
 					</blockquote>
-					<div className="about-highlights" aria-label="Personal highlights">
-						<span>Curious</span>
-						<span>Team Player</span>
-						<span>Problem Solver</span>
-						<span>Design &amp; Development</span>
-					</div>
 				</section>
 
 				<section className="basic-information" aria-labelledby="basic-information-title">
@@ -53,12 +49,12 @@ function About() {
 							<dt>Education</dt><dd>Computer Engineering</dd>
 						</div>
 						<div className="information-row">
-							<span className="information-icon icon-role"><Icon icon="mdi:domain" aria-hidden="true" /></span>
-							<dt>University</dt><dd>King Mongkut's University of Technology North Bangkok</dd>
+							<span className="information-icon icon-role"><Icon icon="mdi:chart-box-outline" aria-hidden="true" /></span>
+							<dt>GPA</dt><dd>2.80</dd>
 						</div>
 						<div className="information-row">
-							<span className="information-icon icon-interests"><Icon icon="mdi:heart-outline" aria-hidden="true" /></span>
-							<dt>Interests</dt><dd>UX/UI Design, Web Development,<br />IoT, Cloud Computing</dd>
+							<span className="information-icon icon-role"><Icon icon="mdi:domain" aria-hidden="true" /></span>
+							<dt>University</dt><dd>King Mongkut's University of Technology North Bangkok</dd>
 						</div>
 						<div className="information-row">
 							<span className="information-icon icon-location"><Icon icon="mdi:map-marker-outline" aria-hidden="true" /></span>
@@ -67,21 +63,34 @@ function About() {
 					</dl>
 				</section>
 
-				<aside className="fun-facts-panel" aria-labelledby="fun-facts-title">
-					<header className="fun-facts-heading">
-						<Icon className="fun-facts-star" icon="mdi:star-outline" aria-hidden="true" />
-						<h2 id="fun-facts-title">Fun Facts</h2>
-						<Icon className="fun-facts-sparkle" icon="mdi:creation-outline" aria-hidden="true" />
-					</header>
-					<ul className="fun-facts-list">
-						<li><span className="fact-icon fact-coffee"><Icon icon="mdi:coffee-outline" aria-hidden="true" /></span><span>ชอบกาแฟและการทำงานเช้า ๆ</span></li>
-						<li><span className="fact-icon fact-camera"><Icon icon="mdi:camera-outline" aria-hidden="true" /></span><span>ชอบถ่ายรูปและเก็บบรรยากาศ</span></li>
-						<li><span className="fact-icon fact-music"><Icon icon="mdi:music-note" aria-hidden="true" /></span><span>ฟังเพลงตอนเขียนโค้ด</span></li>
-						<li><span className="fact-icon fact-travel"><Icon icon="mdi:send-outline" aria-hidden="true" /></span><span>ชอบเดินทางและหาประสบการณ์ใหม่</span></li>
-						<li><span className="fact-icon fact-book"><Icon icon="mdi:book-open-outline" aria-hidden="true" /></span><span>ชอบเรียนรู้เทคโนโลยีใหม่ ๆ</span></li>
-						<li><span className="fact-icon fact-nature"><Icon icon="mdi:sprout-outline" aria-hidden="true" /></span><span>สนใจสิ่งแวดล้อมและเทคโนโลยี</span></li>
-					</ul>
-				</aside>
+				<div className="about-right-column">
+					<section className="about-highlights" aria-label="Personal highlights">
+						<article className="about-highlight">
+							<span className="highlight-icon"><Icon icon="mdi:clipboard-check-outline" aria-hidden="true" /></span>
+							<div><h3>Detail-Oriented</h3><p>ใส่ใจรายละเอียดและความเรียบร้อยของงาน</p></div>
+						</article>
+						<article className="about-highlight">
+							<span className="highlight-icon"><Icon icon="mdi:book-open-page-variant-outline" aria-hidden="true" /></span>
+							<div><h3>Always Learning</h3><p>พร้อมเรียนรู้และพัฒนาตัวเองอยู่เสมอ</p></div>
+						</article>
+						<article className="about-highlight">
+							<span className="highlight-icon"><Icon icon="mdi:lightbulb-on-outline" aria-hidden="true" /></span>
+							<div><h3>Open to Learn</h3><p>เปิดรับการเรียนรู้สิ่งใหม่</p></div>
+						</article>
+					</section>
+					<aside className="fun-facts-panel" aria-labelledby="fun-facts-title">
+						<header className="fun-facts-heading">
+							<Icon className="fun-facts-star" icon="mdi:star-outline" aria-hidden="true" />
+							<h2 id="fun-facts-title">Fun Facts</h2>
+							<Icon className="fun-facts-sparkle" icon="mdi:creation-outline" aria-hidden="true" />
+						</header>
+						<ul className="fun-facts-list">
+							<li><span className="fact-icon fact-movie"><Icon icon="mdi:movie-open-outline" aria-hidden="true" /></span><span>เวลาว่างชอบดูหนัง</span></li>
+							<li><span className="fact-icon fact-family"><Icon icon="mdi:account-group-outline" aria-hidden="true" /></span><span>ชอบใช้เวลากับครอบครัว</span></li>
+							<li><span className="fact-icon fact-music"><Icon icon="mdi:music-note-outline" aria-hidden="true" /></span><span>ชอบฟังเพลงตอนพักผ่อน</span></li>
+						</ul>
+					</aside>
+				</div>
 			</section>
 		</main>
 	);
