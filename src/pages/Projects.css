@@ -211,3 +211,12 @@
 @media (prefers-reduced-motion: reduce) {
   .project-card { transition: none; }
 }
+
+.project-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; max-width: 1240px; margin: 0 auto 24px; }
+.project-toolbar > span { color: #657181; font-size: 12px; }
+.project-filters { display: inline-flex; padding: 4px; gap: 4px; border: 1px solid #dce3e2; border-radius: 8px; background: #fff; }
+.project-filters button { min-width: 56px; padding: 8px 12px; border: 0; border-radius: 4px; background: transparent; color: #586477; font-size: 13px; }
+.project-filters button[aria-pressed="true"] { background: #28508d; color: #fff; }
+.project-filters button:hover:not([aria-pressed="true"]) { background: #eef4f2; }
+.project-grid .project-card { border-radius: 8px; animation: project-in 300ms ease; }
+@keyframes project-in { from { opacity: 0; } to { opacity: 1; } }

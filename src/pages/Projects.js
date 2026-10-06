@@ -1,55 +1,16 @@
 import { Icon } from "@iconify/react";
 import "./Projects.css";
-
-const projects = [
-  {
-    id: "hungryhub",
-    title: "HungryHub",
-    category: "Mobile Application",
-    description:
-      "แอปพลิเคชันสำหรับค้นหาและแนะนำเมนูอาหารและเครื่องดื่ม พร้อมแสดงข้อมูลเมนูและวิธีการทำอาหาร",
-    myWork: "พัฒนา Mobile Application และเชื่อมต่อข้อมูลผ่าน REST API",
-    tags: [
-      ["Flutter", "logos:flutter"],
-      ["Dart", "logos:dart"],
-      ["REST API", "mdi:api"],
-      ["JSON", "mdi:code-json"],
-    ],
-  },
-  {
-    id: "vanvan",
-    title: "VanVan Public Van Management System",
-    category: "Software Engineering Project",
-    description:
-      "ระบบบริหารจัดการรถตู้สาธารณะ ออกแบบจากการวิเคราะห์ความต้องการของผู้ใช้งานและโครงสร้างระบบ",
-    myWork:
-      "วิเคราะห์ User Requirements, System Requirements, ออกแบบ UML Diagram และจัดทำ Software Requirement Specification (SRS)",
-    tags: [
-      ["HTML", "logos:html-5"],
-      ["CSS", "logos:css-3"],
-      ["JavaScript", "logos:javascript"],
-      ["Node.js", "logos:nodejs-icon"],
-      ["Express.js", "simple-icons:express"],
-    ],
-  },
-  {
-    id: "agricultural-spraying",
-    title: "Automatic Spraying Boat System",
-    category: "Web & IoT Application",
-    description:
-      "เว็บแอปพลิเคชันสำหรับควบคุม ติดตามสถานะ และจัดการภารกิจของเรือพ่นยาอัตโนมัติ",
-    myWork:
-      "ออกแบบและพัฒนาหน้า Home, Mission, Map และ Operation History",
-    tags: [
-      ["React.js", "logos:react"],
-      ["JavaScript", "logos:javascript"],
-      ["HTML", "logos:html-5"],
-      ["CSS", "logos:css-3"],
-    ],
-  },
-];
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { projects } from "../data/projects";
+import ProjectDetails from "../components/ProjectDetails";
 
 function Projects() {
+	const location = useLocation();
+	const [selectedProject, setSelectedProject] = useState(() => projects.find((project) => project.id === location.state?.projectId) || null);
+	const [filter, setFilter] = useState("All");
+	const filters = ["All", "Web", "Mobile", "IoT"];
+	const visibleProjects = projects.filter((project) => filter === "All" || (filter === "Mobile" ? project.id === "hungryhub" : filter === "IoT" ? project.id === "agricultural-spraying" : project.id !== "hungryhub"));
 	return (
 		<main className="projects-page">
 			<header className="projects-heading">
@@ -65,11 +26,17 @@ function Projects() {
 				</div>
 			</header>
 
+			<div className="project-toolbar">
+				<div className="project-filters" role="group" aria-label="Filter projects">
+					{filters.map((option) => <button type="button" key={option} aria-pressed={filter === option} onClick={() => setFilter(option)}>{option}</button>)}
+				</div>
+				<span role="status">{visibleProjects.length} / {projects.length} projects</span>
+			</div>
 			<section className="project-grid" aria-label="Project portfolio">
-				{projects.map((project, index) => (
-						<article className="project-card" key={project.id}>
+				{visibleProjects.map((project) => (
+						<article className={`project-card project-${project.color}`} key={project.id}>
 							<div className="project-card-body">
-								<div className="project-card-number">{String(index + 1).padStart(2, "0")}<span /></div>
+								<div className="project-card-number">{String(projects.indexOf(project) + 1).padStart(2, "0")}<span /></div>
 								<span className="project-category">{project.category}</span>
 								<h2>{project.title}</h2>
                 <p className="project-description">{project.description}</p>
@@ -82,10 +49,12 @@ function Projects() {
                     ))}
                   </div>
                 </div>
+                <button className="project-details-button" type="button" onClick={() => setSelectedProject(project)} aria-label={`View ${project.title} details`}>Explore Project <Icon icon="mdi:arrow-top-right" aria-hidden="true" /></button>
 							</div>
 						</article>
 				))}
 			</section>
+			{selectedProject && <ProjectDetails project={selectedProject} onDismiss={() => setSelectedProject(null)} />}
 		</main>
 	);
 }

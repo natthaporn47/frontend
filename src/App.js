@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PageEffects from "./components/PageEffects";
+import "./components/PageEffects.css";
+import "./components/PortfolioInteractions.css";
 
 import Navbar from "./components/Navbar.js";
 import "./components/Navbar.css"
@@ -14,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-
+      <PageEffects>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -24,6 +27,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
       </Routes>
+      </PageEffects>
     </BrowserRouter>
   );
 }

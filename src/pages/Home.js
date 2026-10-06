@@ -1,11 +1,16 @@
 import Hero from "../Hero/Hero.js";
+import HomeSections from "../components/HomeSections";
+import "./Home.css";
 
 
 function Home(){
 
     return(
 
-        <Hero/>
+        <main className="home-root">
+            <Hero />
+            <HomeSections />
+        </main>
 
     )
 

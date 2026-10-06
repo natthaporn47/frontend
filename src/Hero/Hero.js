@@ -1,98 +1,67 @@
 import "./Hero.css";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import { useRef, useState } from "react";
+import TypingLine from "../components/TypingLine";
 
+const interests = [
+    { label: "UI/UX", icon: "mdi:vector-square", focus: "UX/UI Design", tools: "Figma, wireframes, prototypes" },
+    { label: "Frontend", icon: "mdi:code-tags", focus: "Frontend Development", tools: "React, JavaScript, CSS" },
+    { label: "Web", icon: "mdi:web", focus: "Web Development", tools: "Node.js, REST API, JSON" },
+    { label: "IoT", icon: "mdi:chip", focus: "IoT & Embedded Systems", tools: "ESP32, Arduino, MQTT" },
+];
 
 function Hero() {
+    const [activeInterest, setActiveInterest] = useState(1);
+    const [profileRunning, setProfileRunning] = useState(false);
+    const scene = useRef(null);
+    const interest = interests[activeInterest];
+    const moveWorkspace = (event) => {
+        if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        const bounds = event.currentTarget.getBoundingClientRect();
+        scene.current.style.setProperty("--pointer-x", `${((event.clientX - bounds.left) / bounds.width - 0.5) * 8}px`);
+        scene.current.style.setProperty("--pointer-y", `${((event.clientY - bounds.top) / bounds.height - 0.5) * 8}px`);
+    };
+    const resetWorkspace = () => {
+        scene.current.style.setProperty("--pointer-x", "0px");
+        scene.current.style.setProperty("--pointer-y", "0px");
+    };
     return (
-        <main className="home-page">
-            <section className="hero" aria-labelledby="home-title">
+        <div className="home-page">
+            <section className="hero scrapbook-hero" aria-labelledby="home-title" onPointerMove={moveWorkspace} onPointerLeave={resetWorkspace}>
                 <div className="hero-text">
                     <p className="hello">Hi, I'm</p>
-                    <h1 id="home-title">
-                        <span>Nattaporn</span>
-                        <span>Wangsuk</span>
-                    </h1>
+                    <h1 id="home-title"><span>Nattaporn</span><span>Wangsuk</span></h1>
                     <h2>Computer Engineering Student</h2>
-                    <p className="hero-description">
-                        King Mongkut's University of Technology North Bangkok <br />
-                    </p>
-                    <p className="hero-quote">“Always ready to learn, explore new ideas, and grow through every opportunity.”</p>
-                    <Link className="hero-cta" to="/about">
-                        Explore My Journey <span aria-hidden="true">→</span>
-                    </Link>
+                    <TypingLine />
+                    <p className="hero-personal-intro">สวัสดีค่ะ ฉันชื่อ Earn สนใจการออกแบบ<br />การพัฒนาเว็บ แอปมือถือ และระบบ IoT</p>
+                    <div className="scrapbook-hero-actions">
+                        <a className="hero-cta" href="#home-projects">View My Projects <Icon icon="mdi:arrow-right" aria-hidden="true" /></a>
+                        <button className="hero-preview-button" type="button" aria-expanded={profileRunning} aria-controls="hero-profile-preview" aria-label={profileRunning ? "Close profile preview" : "Run profile"} onClick={() => setProfileRunning(!profileRunning)}><Icon icon="mdi:code-braces" aria-hidden="true" />{profileRunning ? "Close preview" : "Meet Earn"}</button>
+                    </div>
                     <div className="hero-socials" aria-label="Social links">
-                        <a href="https://github.com/natthaporn47" target="_blank" rel="noreferrer" aria-label="GitHub">
-                            <Icon icon="cib:github" aria-hidden="true" />
-                        </a>
-                        <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=naththaphrnh@gmail.com"
-                            aria-label="Email Nattaporn"
-                            title="Email Nattaporn"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <Icon icon="clarity:email-outline-badged" aria-hidden="true" />
-                        </a>
-                        <Link to="/contact" aria-label="Contact">
-                            <Icon icon="mdi:arrow-top-right" aria-hidden="true" />
-                        </Link>
+                        <a href="https://github.com/natthaporn47" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><Icon icon="cib:github" aria-hidden="true" /></a>
+                        <a href="mailto:naththaphrnh@gmail.com" aria-label="Email Nattaporn" title="Email Nattaporn"><Icon icon="mdi:email-outline" aria-hidden="true" /></a>
+                        <Link to="/contact" aria-label="Contact" title="Contact"><Icon icon="mdi:account-heart-outline" aria-hidden="true" /></Link>
                     </div>
                 </div>
-
-                <div className="hero-visual" aria-label="Design and development workspace">
-                    <div className="study-note">
-                        <div className="study-heading">
-                            <Icon icon="mdi:book-open-page-variant" aria-hidden="true" />
-                            <span>Currently Learning</span>
-                        </div>
-                        <ul>
-                            <li>React</li>
-                            <li>JavaScript</li>
-                            <li>IoT</li>
-                            <li>Cloud Computing</li>
-                        </ul>
-                    </div>
-
-                    <div className="idea-note">
-                        Good Ideas<br />
-                        Better<br />
-                        Tomorrow <span>♡</span>
-                    </div>
-
-                    <div className="editor-window" aria-hidden="true">
-                        <div className="editor-toolbar">
-                            <div className="window-dots"><i></i><i></i><i></i></div>
-                            <span>Home.js</span>
-                        </div>
-                        <div className="editor-content">
-                            <div className="editor-gutter">1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11</div>
-                            <pre><span className="syntax-keyword">const</span> developer = {'{'}<br />  name: <span className="syntax-string">"Nattaporn Wangsuk"</span>,<br />  role: <span className="syntax-string">"Computer Engineering Student"</span>,<br />  interests: [<br />    <span className="syntax-string">"UX/UI Design"</span>,<br />    <span className="syntax-string">"Frontend Development"</span>,<br />    <span className="syntax-string">"Web Development"</span>,<br />  ],<br />  goal: <span className="syntax-string">"Create useful things"</span><br />{'}'};<br /><br /><span className="syntax-comment">console.log("Welcome to my portfolio!");</span></pre>
-                        </div>
-                    </div>
-
-                    <div className="design-note">
-                        <Icon icon="mdi:lightbulb-on-outline" aria-hidden="true" />
-                        <span>Design<br />Develop<br />Learn<br />Repeat</span>
-                    </div>
-
-                    <div className="skill-stack" aria-label="Areas of interest">
-                        <div className="floating-skill skill-design"><Icon icon="mdi:vector-square" aria-hidden="true" />UI/UX</div>
-                        <div className="floating-skill skill-frontend"><Icon icon="mdi:code-tags" aria-hidden="true" />Frontend</div>
-                        <div className="floating-skill skill-web"><Icon icon="mdi:web" aria-hidden="true" />Web</div>
-                        <div className="floating-skill skill-iot"><Icon icon="mdi:chip" aria-hidden="true" />IoT</div>
-                    </div>
-
-                    <div className="desk-plant" aria-hidden="true">
-                        <span></span><span></span><span></span><span></span>
-                        <div></div>
-                    </div>
-                    <span className="visual-spark spark-one" aria-hidden="true">✦</span>
-                    <span className="visual-spark spark-two" aria-hidden="true">✧</span>
+                <div ref={scene} className="hero-scene" aria-label="Creative workspace illustration">
+                    <img className="hero-character" src={`${process.env.PUBLIC_URL}/images/earn-workspace-blue.png`} alt="" aria-hidden="true" width="1536" height="1024" fetchPriority="high" />
+                    <div className="hero-interest-badges" aria-label="Areas of interest">{interests.map((item, index) => <button key={item.label} className={`interest-badge badge-${index}`} type="button" aria-pressed={activeInterest === index} onClick={() => setActiveInterest(index)} title={item.focus}><Icon icon={item.icon} aria-hidden="true" />{item.label}</button>)}</div>
+                    <span className="scrapbook-sun" aria-hidden="true"><Icon icon="mdi:white-balance-sunny" /></span>
+                    <span className="scrapbook-code-sticker" aria-hidden="true"><Icon icon="mdi:code-tags" /></span>
+                    <div className="hero-learning-note"><strong>Currently learning...</strong><span>React / JavaScript</span><span>IoT / Cloud Computing</span></div>
+                    <div className="hero-interest-note" aria-live="polite"><strong>{interest.focus}</strong><span>{interest.tools}</span></div>
                 </div>
-
+                {profileRunning && <div className="hero-profile-preview" id="hero-profile-preview" role="status">
+                    <span className="preview-command">$ node earn.js</span>
+                    <strong><Icon icon="mdi:check-circle-outline" aria-hidden="true" /> Hello, I'm Earn!</strong>
+                    <dl><div><dt>Name</dt><dd>Nattaporn Wangsuk</dd></div><div><dt>Focus</dt><dd>{interest.focus}</dd></div><div><dt>Toolkit</dt><dd>{interest.tools}</dd></div></dl>
+                    <Link to="/about">More about me <Icon icon="mdi:arrow-top-right" aria-hidden="true" /></Link>
+                </div>}
+                <a className="hero-scroll-note" href="#home-about"><span>Scroll a little</span><Icon icon="mdi:mouse" aria-hidden="true" /><Icon icon="mdi:chevron-down" aria-hidden="true" /></a>
             </section>
-        </main>
+        </div>
     );
 }
 

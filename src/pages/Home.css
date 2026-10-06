@@ -1,0 +1,227 @@
+@font-face { font-family: "Patrick Hand"; src: url("../../public/fonts/PatrickHand-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+.home-root { --home-width: min(66.6667vw, 1280px); --home-blue: #437aaa; --home-ink: #33475b; --home-muted: #677989; --home-line: #e3ebf0; color: var(--home-ink); background: #fff; }
+html:has(.home-root) { scroll-behavior: smooth; }
+body:has(.home-root) .navbar { width: min(66.6667vw, 1280px); padding-inline: 0; border-bottom-color: var(--home-line, #e3ebf0); }
+body:has(.home-root) .logo { font: 26px/1.2 "Patrick Hand", cursive; color: #33475b; }
+body:has(.home-root) .logo::after { content: "♡"; margin-left: 5px; color: #719cbe; font-size: 18px; }
+body:has(.home-root) .menu a { font-size: 12px; }
+.home-root .home-page { min-height: 0; background: #fffdfb; overflow: visible; }
+.home-root .hero { display: block; position: relative; isolation: isolate; width: var(--home-width); padding: 62px 0 74px; min-height: 510px; }
+.home-root .hero-text { position: relative; z-index: 2; width: 46%; max-width: 510px; min-width: 0; }
+.home-root .hello { margin-bottom: 8px; font: 24px/1.2 "Patrick Hand", cursive; }
+.home-root .hero h1 { font: 68px/0.95 "Patrick Hand", cursive; letter-spacing: 0; }
+.home-root .hero h1 span:last-child { color: var(--home-blue); }
+.home-root .hero h2 { display: inline; font-size: 13px; line-height: 2.2; font-weight: 500; background: #e9f3fc; padding: 3px 7px; border-left: 2px solid #8ab4d9; box-decoration-break: clone; }
+.home-root .hero-personal-intro { color: var(--home-muted); font-size: 13px; line-height: 1.9; margin: 18px 0 0; }
+.home-root .typing-line { margin: 10px 0 0; min-height: 27px; color: #5c88ac; font: 12px/1.6 Arial, sans-serif; }
+.home-root .typing-line button { color: #769ab7; width: 22px; flex-basis: 22px; }
+.home-root .typing-caret { color: #df9c5c; }
+.scrapbook-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.home-root .hero-cta { gap: 8px; margin: 0; padding: 9px 16px; background: #6394bd; color: #fff; font-size: 12px; border-radius: 20px; box-shadow: 0 3px 0 #d9e9f6; min-height: 38px; }
+.home-root .hero-cta svg { width: 16px; height: 16px; }
+.home-root .hero-cta:hover { translate: 0 -3px; box-shadow: 0 6px 0 #d9e9f6; background: #4a80ab; }
+.hero-preview-button { display: inline-flex; align-items: center; gap: 6px; min-height: 38px; border: 1px solid #bfd3e3; background: #fff; border-radius: 20px; padding: 7px 13px; color: #557e9e; font-size: 11px; }
+.hero-preview-button svg { width: 16px; height: 16px; }
+.hero-preview-button:hover { background: #edf5fb; }
+.home-root .hero-socials { margin-top: 20px; gap: 8px; }
+.home-root .hero-socials a { width: 28px; height: 28px; background: #eef1f3; color: #7890a2; font-size: 16px; }
+.home-root .hero-socials a:hover { background: #dcebf7; color: #3b76a5; }
+.hero-scene { position: absolute; right: -1%; top: 16px; width: 56%; height: 440px; z-index: 1; --pointer-x: 0px; --pointer-y: 0px; }
+.hero-character { position: absolute; inset: 48px 0 auto; width: 100%; height: 360px; object-fit: contain; translate: var(--pointer-x) var(--pointer-y); transition: translate 250ms ease-out; }
+.interest-badge { position: absolute; display: inline-flex; align-items: center; gap: 5px; padding: 6px 10px; border: 1px solid #dbe8f2; border-radius: 6px; background: #f5faff; color: #52758f; font: 14px/1.1 "Patrick Hand", cursive; box-shadow: 0 3px 7px #34465a08; transition: translate 180ms, background 180ms; }
+.interest-badge svg { width: 14px; height: 14px; }
+.interest-badge[aria-pressed=true] { background: #6b9bc2; border-color: #6b9bc2; color: #fff; }
+.interest-badge:hover { translate: 0 -3px; }
+.badge-0 { top: 37px; left: 12%; rotate: -7deg; background: #fff0dc; border-color: #f1dcc0; }
+.badge-1 { top: 47px; right: 8%; rotate: 5deg; }
+.badge-2 { top: 155px; left: 0; rotate: -5deg; }
+.badge-3 { top: 163px; right: 0; rotate: 7deg; background: #edf6ed; border-color: #d9e6d5; }
+.scrapbook-sun { position: absolute; top: 16px; left: 43%; color: #d8a25a; rotate: 10deg; }
+.scrapbook-sun svg { width: 33px; height: 33px; }
+.scrapbook-code-sticker { position: absolute; left: 6%; bottom: 81px; display: grid; place-items: center; width: 45px; height: 40px; rotate: -7deg; border: 1px solid #c9dced; background: #e6f2fd; border-radius: 6px; color: #5992be; }
+.scrapbook-code-sticker svg { width: 30px; height: 30px; }
+.hero-learning-note { position: absolute; right: 2%; bottom: 53px; display: grid; gap: 5px; background: #ffffffef; border-left: 2px solid #b6d0b0; padding: 10px 12px; rotate: 3deg; max-width: 180px; }
+.hero-learning-note strong { font: 16px/1.2 "Patrick Hand", cursive; }
+.hero-learning-note span { font-size: 9px; color: #7c8b8a; }
+.hero-interest-note { position: absolute; bottom: 1px; left: 10%; right: 7%; display: grid; gap: 5px; padding: 8px; text-align: center; }
+.hero-interest-note strong { color: #577a97; font: 16px/1.2 "Patrick Hand", cursive; }
+.hero-interest-note span { color: #8191a0; font-size: 10px; line-height: 1.5; }
+.hero-scroll-note { position: absolute; bottom: 22px; left: 0; display: flex; align-items: center; gap: 7px; color: #809aac; text-decoration: none; font: 13px/1.3 "Patrick Hand", cursive; }
+.hero-scroll-note svg { width: 16px; height: 16px; }
+.hero-profile-preview { position: absolute; z-index: 8; right: 0; bottom: 28px; width: min(370px, 100%); padding: 22px; border: 1px solid #c7dced; border-radius: 8px; background: #f6fbff; box-shadow: 0 12px 40px #3657731f; font: 12px/1.6 Consolas, monospace; animation: paper-in 220ms ease; }
+.preview-command { display: block; color: #8aa0b2; margin-bottom: 12px; }
+.hero-profile-preview > strong { display: flex; align-items: center; gap: 8px; color: #558a6e; }
+.hero-profile-preview svg { width: 17px; height: 17px; }
+.hero-profile-preview dl { margin: 16px 0; }
+.hero-profile-preview dl > div { display: grid; grid-template-columns: 60px 1fr; gap: 6px; margin: 8px 0; }
+.hero-profile-preview dt { color: #8194a2; }
+.hero-profile-preview dd { margin: 0; overflow-wrap: anywhere; }
+.hero-profile-preview a { display: inline-flex; align-items: center; gap: 6px; color: #4b81ab; text-decoration: none; }
+.home-section { position: relative; padding: 42px 0; scroll-margin-top: 105px; }
+.home-section-inner { width: var(--home-width); margin: 0 auto; }
+.home-root .home-section h2 { display: flex; align-items: center; gap: 9px; margin: 0 0 16px; font: 36px/1.15 "Patrick Hand", cursive; letter-spacing: 0; }
+.home-root .home-section h2 svg { width: 23px; height: 23px; color: #82a6c4; }
+.home-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.home-section-heading p { color: var(--home-muted); font-size: 12px; line-height: 1.8; margin: 0; }
+.home-more-link { display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; border: 0; border-radius: 18px; padding: 6px 12px; color: #628cad; background: #eaf4fd; font-size: 10px; text-decoration: none; transition: translate 180ms; }
+.home-more-link svg { width: 13px; height: 13px; }
+.home-more-link:hover { translate: 2px 0; background: #d9eafa; }
+.home-about { background: #fff; border-bottom: 1px solid var(--home-line); }
+.home-about::before { content: ""; position: absolute; inset: 0 0 auto; height: 17px; background: #e4f0fc; clip-path: polygon(0 0,100% 0,100% 45%,74% 75%,64% 35%,42% 75%,27% 40%,0 100%); }
+.home-about-layout { display: grid; grid-template-columns: 0.9fr 1.3fr; align-items: center; gap: 8%; }
+.home-about-art { position: relative; width: min(100%, 285px); margin: 0 auto; padding: 18px 8px; }
+.scrapbook-photo { position: relative; padding: 10px 10px 34px; background: #fff; border: 1px solid #e3e8ed; box-shadow: 0 8px 20px #34506d0d; rotate: -3deg; }
+.scrapbook-photo::before { content: ""; position: absolute; top: -10px; left: 35%; width: 85px; height: 24px; background: #d9e9f8d9; rotate: 6deg; }
+.home-about-image { display: block; width: 100%; height: 230px; object-fit: cover; object-position: 55% 25%; background: #f0f6fc; }
+.scrapbook-photo > span { position: absolute; bottom: 9px; inset-inline: 0; text-align: center; font: 15px/1.3 "Patrick Hand", cursive; color: #7b90a1; }
+.photo-paperclip { position: absolute; width: 34px; height: 34px; top: 8px; left: 12px; rotate: -22deg; color: #90a3b3; }
+.home-art-note { display: block; text-align: center; margin-top: 17px; font: 17px/1.3 "Patrick Hand", cursive; color: #7997ad; rotate: -2deg; }
+.home-about-copy > p { color: var(--home-muted); font-size: 13px; line-height: 1.9; margin: 0 0 14px; }
+.home-about-copy > p strong { color: #506679; }
+.scrapbook-about-facts { margin: 18px 0; }
+.scrapbook-about-facts > div { display: grid; grid-template-columns: 17px 65px 1fr; gap: 8px; align-items: start; margin: 9px 0; font-size: 11px; line-height: 1.7; }
+.scrapbook-about-facts svg { width: 15px; height: 15px; color: #b89568; margin-top: 2px; }
+.scrapbook-about-facts dt { color: #97a3ac; }
+.scrapbook-about-facts dd { margin: 0; color: #718596; }
+.section-paperplane { position: absolute; right: 5%; bottom: 24px; width: 34px; height: 34px; rotate: -17deg; color: #a3c0d7; }
+.home-skills { background: #fcfdff; border-bottom: 1px solid var(--home-line); }
+.scrapbook-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
+.scrapbook-filters button { border: 0; border-radius: 16px; padding: 6px 13px; background: #f0f3f6; color: #83909d; font-size: 10px; transition: background 150ms, color 150ms; }
+.scrapbook-filters button[aria-pressed=true] { background: #7da7ca; color: #fff; }
+.scrapbook-skill-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; animation: paper-in 300ms ease; }
+.scrapbook-skill { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-width: 0; min-height: 97px; padding: 16px 8px 12px; border: 1px solid #e5ebf0; border-radius: 8px; background: #fff; box-shadow: 0 3px 8px #354b6505; color: #72879a; text-decoration: none; transition: translate 180ms, border-color 180ms; }
+.scrapbook-skill > svg { width: 29px; height: 29px; }
+.scrapbook-skill > span { max-width: 100%; font-size: 10px; line-height: 1.5; text-align: center; overflow-wrap: anywhere; }
+.scrapbook-skill:hover { translate: 0 -5px; border-color: #93b8d7; }
+.skill-filter-count { margin: 14px 0 0; color: #98a7b3; text-align: right; font-size: 9px; }
+.home-work { background: #fff; }
+.peach-link { background: #fff0dd; color: #a78861; }
+.home-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.home-work-preview { position: relative; display: flex; min-width: 0; border: 1px solid #f0dfcb; background: #fff1e2; border-radius: 8px; color: var(--home-ink); text-decoration: none; transition: translate 220ms, rotate 220ms, box-shadow 220ms; }
+.home-work-preview.blue { background: #eaf4fc; border-color: #d4e5f3; }
+.home-work-preview.green { background: #eff7e9; border-color: #dfead2; }
+.home-work-preview:hover { translate: 0 -5px; rotate: -0.5deg; box-shadow: 0 10px 18px #3f52690f; }
+.project-sticker-number { position: absolute; top: 13px; left: 17px; font: 19px/1.2 "Patrick Hand", cursive; color: #927b68; }
+.project-sticker-icon { position: absolute; top: 40px; right: 17px; width: 50px; height: 50px; padding: 9px; border: 1px solid #ddc9ad; border-radius: 6px; background: #fffaf0; color: #ba9469; rotate: 7deg; }
+.home-work-preview.blue .project-sticker-icon { color: #79a4c7; border-color: #c5dced; background: #f6fbff; }
+.home-work-preview.green .project-sticker-icon { color: #86a06c; border-color: #d0dfc2; background: #f8fbf4; }
+.home-work-copy { display: flex; flex-direction: column; width: 100%; padding: 44px 18px 16px; }
+.home-work-copy h3 { padding-right: 60px; margin: 0 0 8px; min-height: 61px; font: 22px/1.1 "Patrick Hand", cursive; overflow-wrap: anywhere; }
+.home-work-category { color: #8596a4; font-size: 9px; margin-bottom: 14px; }
+.home-work-copy p { margin: 0 0 18px; font-size: 11px; line-height: 1.9; color: #718698; }
+.home-work-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
+.home-work-tags span { border-radius: 4px; padding: 3px 6px; background: #fff9; color: #7098b8; font-size: 8px; line-height: 1.5; }
+.home-work-cta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; color: #9aa7b2; font-size: 9px; }
+.home-work-cta > svg { width: 29px; height: 29px; padding: 6px; border-radius: 50%; color: #fff; background: #729ab6; }
+.home-work-preview.green .home-work-cta > svg { background: #8caf80; }
+.home-work-preview.blue .home-work-cta > svg { background: #729fc4; }
+.home-journey { background: #fcfdff; border-block: 1px solid var(--home-line); }
+.home-root .home-journey h2 { font-size: 29px; }
+.journey-layout { display: grid; grid-template-columns: 1fr 135px; gap: 32px; align-items: center; }
+.journey-steps { padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; list-style: none; }
+.journey-steps li { display: flex; gap: 11px; align-items: flex-start; }
+.journey-step-icon { display: grid; place-items: center; flex: 0 0 36px; height: 36px; border-radius: 8px; background: #e8f1fa; color: #7ca3c3; }
+.journey-step-icon svg { width: 21px; height: 21px; }
+.journey-steps li:nth-child(2) .journey-step-icon { background: #fff1df; color: #c3a47a; }
+.journey-steps li:nth-child(3) .journey-step-icon { background: #edf5e9; color: #95ac82; }
+.journey-steps small { color: #a2b1bd; font-size: 9px; }
+.journey-steps h3 { margin: 4px 0 8px; font: 20px/1.2 "Patrick Hand", cursive; }
+.journey-steps p { margin: 0; font-size: 10px; line-height: 1.8; color: #8294a2; }
+.journey-facts { border-left: 1px solid #dce7ef; padding-left: 25px; margin: 0; }
+.journey-facts > div { display: flex; flex-direction: row-reverse; justify-content: flex-end; align-items: center; gap: 10px; margin: 12px 0; }
+.journey-facts dt { color: #8a9ca9; font-size: 9px; }
+.journey-facts dd { margin: 0; color: #6f9cbb; font: 24px/1 "Patrick Hand", cursive; }
+.home-connect { background: #fffdfb; }
+.home-connect-layout { display: grid; grid-template-columns: 0.9fr 2fr; gap: 36px; align-items: center; }
+.home-connect-layout p { font-size: 11px; line-height: 1.8; color: #8293a0; }
+.home-contact-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.home-contact-links a { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 16px 12px; border: 1px solid #e2eaf0; border-radius: 8px; background: #fff; color: #7e91a1; text-decoration: none; transition: translate 180ms; }
+.home-contact-links a > svg { width: 24px; height: 24px; color: #88aed0; flex-shrink: 0; }
+.home-contact-links a:nth-child(2) > svg { color: #b89b70; }
+.home-contact-links a:nth-child(3) > svg { color: #96b386; }
+.home-contact-links span { min-width: 0; font-size: 9px; line-height: 1.7; overflow-wrap: anywhere; }
+.home-contact-links small { display: block; font-size: 11px; color: #5f788e; margin-bottom: 4px; }
+.home-contact-links a:hover { translate: 0 -3px; }
+.home-footer { width: var(--home-width); margin: 0 auto; padding: 20px 0; border-top: 1px solid var(--home-line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.home-footer > span { font: 16px/1.2 "Patrick Hand", cursive; color: #87a0b3; }
+.home-footer > p { margin: 0; color: #a1adb7; font-size: 9px; }
+.home-footer > a { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #8aafce; color: #fff; }
+.home-footer svg { width: 16px; height: 16px; }
+.project-dialog-heading h2 { font-family: "Patrick Hand", cursive; font-weight: 400; font-size: 33px; color: #4c7596; }
+@keyframes paper-in { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+@media (max-width: 1199px) {
+  .home-root { --home-width: 80%; }
+  body:has(.home-root) .navbar { width: 80%; }
+  .home-root .hero h1 { font-size: 60px; }
+  .hero-scene { width: 55%; }
+  .scrapbook-skill-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .home-contact-links { grid-template-columns: 1fr; }
+  .home-contact-links a { padding: 11px 14px; }
+  .home-contact-links span { font-size: 11px; }
+}
+@media (max-width: 900px) {
+  .home-root { --home-width: 88%; }
+  body:has(.home-root) .navbar { width: 88%; }
+  .home-root .hero h1 { font-size: 53px; }
+  .home-work-grid { gap: 12px; }
+  .home-work-copy h3 { font-size: 20px; }
+  .project-sticker-icon { width: 40px; height: 40px; right: 12px; }
+  .home-work-copy h3 { padding-right: 42px; }
+  .journey-layout { grid-template-columns: 1fr; gap: 24px; }
+  .journey-facts { display: flex; justify-content: center; gap: 30px; padding: 12px 0 0; border-left: 0; border-top: 1px solid #e4ecf2; }
+}
+@media (max-width: 680px) {
+  .home-root { --home-width: calc(100% - 40px); }
+  body:has(.home-root) .navbar { width: calc(100% - 40px); }
+  .home-root .hero { min-height: 0; padding: 32px 0 48px; }
+  .home-root .hero-text { width: 100%; max-width: 460px; }
+  .home-root .hero h1 { font-size: 54px; }
+  .home-root .hero-personal-intro { font-size: 12px; }
+  .hero-scene { position: relative; inset: auto; width: 100%; height: 335px; margin-top: 18px; }
+  .hero-character { top: 35px; height: 270px; }
+  .badge-0 { top: 14px; left: 5%; } .badge-1 { top: 18px; right: 4%; } .badge-2 { top: 105px; left: 0; } .badge-3 { top: 105px; right: 0; }
+  .scrapbook-sun { top: 0; } .scrapbook-sun svg { width: 26px; height: 26px; }
+  .scrapbook-code-sticker { bottom: 50px; left: 2%; width: 33px; height: 30px; } .scrapbook-code-sticker svg { width: 23px; height: 23px; }
+  .hero-learning-note { bottom: 42px; padding: 7px; right: 0; max-width: 145px; }
+  .hero-learning-note strong { font-size: 13px; } .hero-learning-note span { font-size: 8px; }
+  .hero-interest-note { bottom: -7px; left: 5%; right: 5%; } .hero-interest-note strong { font-size: 14px; } .hero-interest-note span { font-size: 9px; }
+  .hero-scroll-note { bottom: 15px; }
+  .hero-profile-preview { bottom: 54px; }
+  .home-section { padding-block: 34px; }
+  .home-root .home-section h2 { font-size: 32px; }
+  .home-section-heading { align-items: flex-start; gap: 12px; }
+  .home-section-heading p { font-size: 11px; }
+  .home-section-heading .home-more-link { margin-top: 5px; font-size: 9px; padding: 6px 8px; }
+  .home-about-layout { grid-template-columns: 1fr; gap: 20px; }
+  .home-about-art { width: min(100%, 245px); }
+  .home-about-image { height: 210px; }
+  .home-about-copy > p { font-size: 13px; }
+  .section-paperplane { right: 6%; bottom: 18px; width: 25px; height: 25px; }
+  .scrapbook-filters { gap: 5px; } .scrapbook-filters button { padding: 6px 9px; }
+  .scrapbook-skill-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+  .scrapbook-skill { min-height: 88px; padding-block: 12px; }
+  .home-work-grid { grid-template-columns: 1fr; gap: 16px; }
+  .home-work-copy { padding: 40px 20px 18px; }
+  .home-work-copy h3 { font-size: 26px; min-height: 0; padding-right: 65px; }
+  .home-work-copy p { font-size: 12px; }
+  .home-work-category { font-size: 10px; }
+  .project-sticker-icon { top: 30px; right: 20px; width: 53px; height: 53px; }
+  .home-work-tags span { font-size: 9px; }
+  .home-root .home-journey h2 { font-size: 26px; }
+  .journey-steps { grid-template-columns: 1fr; gap: 22px; }
+  .journey-steps p { font-size: 12px; } .journey-steps h3 { font-size: 23px; }
+  .journey-facts { gap: 20px; } .journey-facts > div { flex-direction: column-reverse; gap: 6px; }
+  .home-connect-layout { grid-template-columns: 1fr; gap: 24px; }
+  .home-contact-links a { padding: 14px; }
+  .home-contact-links span { font-size: 11px; }
+  .home-footer p { order: 3; width: 100%; text-align: center; }
+}
+@media (max-width: 360px) {
+  .home-root .hero h1 { font-size: 48px; }
+  .home-root .home-section h2 { font-size: 28px; }
+  .home-section-heading { flex-wrap: wrap; }
+  .hero-learning-note { max-width: 130px; }
+  .interest-badge { font-size: 12px; padding: 5px 7px; }
+  .journey-facts { gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { html:has(.home-root) { scroll-behavior: auto; } .hero-character { translate: none; } }

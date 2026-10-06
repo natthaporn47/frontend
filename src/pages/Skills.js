@@ -1,37 +1,10 @@
 import { Icon } from "@iconify/react";
 import "./Skills.css";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { projects } from "../data/projects";
 
-const skillGroups = [
-	{
-		title: "Frontend Development",
-		description: "พัฒนาหน้าเว็บที่รองรับทุกขนาดหน้าจอ",
-		color: "blue",
-		icons: [["HTML", "logos:html-5"], ["CSS", "logos:css-3"], ["Bootstrap", "logos:bootstrap"], ["JavaScript", "logos:javascript"], ["React.js", "logos:react"]],
-	},
-	{
-		title: "Backend Development",
-		description: "พัฒนา API และจัดการข้อมูล",
-		color: "orange",
-		icons: [["Python", "logos:python"], ["PHP", "logos:php"], ["Node.js", "logos:nodejs-icon"], ["REST API", "mdi:api"], ["JSON", "mdi:code-json"]],
-	},
-	{
-		title: "Mobile Development",
-		description: "พัฒนาแอปมือถือที่ใช้งานได้หลายแพลตฟอร์ม",
-		color: "green",
-		icons: [["Flutter", "logos:flutter"], ["Dart", "logos:dart"]],
-	},
-	{
-		title: "IoT & Embedded System",
-		description: "เชื่อมต่อเซนเซอร์และอุปกรณ์สมองกลฝังตัว",
-		color: "purple",
-		icons: [["ESP32", "mdi:chip"], ["Arduino", "simple-icons:arduino"], ["DHT22 Sensor", "mdi:thermometer"], ["Raspberry Pi", "logos:raspberry-pi"], ["MQTT", "mdi:access-point-network"], ["Node-RED", "simple-icons:nodered"]],
-	},
-];
-
-const tools = [
-	["Visual Studio Code", "vscode-icons:file-type-vscode"], ["GitHub", "mdi:github"], ["Git", "logos:git-icon"],
-	["Firebase", "logos:firebase"],["Supabase", "logos:supabase"], ["Arduino IDE", "simple-icons:arduino"], ["Linux", "logos:linux-tux"],["Azure", "logos:microsoft-azure"],
-];
+import { skillGroups, tools } from "../data/skills";
 
 const otherSkills = [
 	["Teamwork", "การทำงานร่วมกับผู้อื่น", "mdi:account-group-outline"],
@@ -41,6 +14,17 @@ const otherSkills = [
 ];
 
 function Skills() {
+	const location = useLocation();
+	const [selectedSkill, setSelectedSkill] = useState(() => {
+		for (const group of skillGroups) {
+			const match = group.icons.find(([label]) => label === location.state?.skillLabel);
+			if (match) return { label: match[0], icon: match[1], group };
+		}
+		const tool = tools.find(([label]) => label === location.state?.skillLabel);
+		if (tool) return { label: tool[0], icon: tool[1], group: { title: "Tools & Platforms", description: "เครื่องมือและแพลตฟอร์มที่ใช้ในการพัฒนางาน" } };
+		return { label: "React.js", icon: "logos:react", group: skillGroups[0] };
+	});
+	const relatedProjects = projects.filter((project) => project.tags.some(([label]) => label === selectedSkill.label));
 	return (
 		<main className="skills-page">
 			<section className="skills-hero" aria-labelledby="skills-title">
@@ -64,10 +48,11 @@ function Skills() {
 					<article className={`skill-group ${group.color}`} key={group.title}>
 						<div className="skill-group-heading"><span>0{index + 1}</span><h2>{group.title}</h2></div>
 						<p>{group.description}</p>
-						<div className="skill-icons">{group.icons.map(([label, icon]) => <span key={label}><Icon icon={icon} /><small>{label}</small></span>)}</div>
+						<div className="skill-icons">{group.icons.map(([label, icon]) => <button className="skill-pick" type="button" key={label} aria-pressed={selectedSkill.label === label} onClick={() => setSelectedSkill({ label, icon, group })} title={label}><Icon icon={icon} aria-hidden="true" /><small>{label}</small></button>)}</div>
 					</article>
 				))}
 			</section>
+			<section className="skill-spotlight" aria-labelledby="skill-spotlight-title"><div className="skill-spotlight-title"><Icon icon={selectedSkill.icon} aria-hidden="true" /><div><span>{selectedSkill.group.title}</span><h2 id="skill-spotlight-title">{selectedSkill.label}</h2></div></div><div className="skill-spotlight-content" key={selectedSkill.label}><p>{selectedSkill.group.description}</p>{relatedProjects.length > 0 ? <div className="skill-projects">{relatedProjects.map((project) => <Link key={project.id} to="/projects" state={{ projectId: project.id }}>{project.title}<Icon icon="mdi:arrow-top-right" aria-hidden="true" /></Link>)}</div> : <span className="skill-practice">Learning &amp; Practice</span>}</div></section>
 
 			<section className="skills-lower" aria-label="Additional skills and tools">
 				<div className="tools-panel">

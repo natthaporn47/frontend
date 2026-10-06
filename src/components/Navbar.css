@@ -16,7 +16,11 @@
   font-size: clamp(1.125rem, 1.6vw, 1.5rem);
   font-weight: 800;
   white-space: nowrap;
+  text-decoration: none;
 }
+
+.navbar { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px); }
+.menu-toggle { display: none; }
 
 .menu {
   grid-column: span 8;
@@ -45,7 +49,7 @@
   bottom: 0;
   left: 0.75em;
   height: 2px;
-  background: #c8795f;
+  background: #5598cc;
   content: "";
   transform: scaleX(0);
   transition: transform 0.3s ease;
@@ -53,12 +57,12 @@
 
 .menu a:hover,
 .menu a:focus-visible {
-  background-color: #f7f3ef;
-  color: #b85e43;
+  background-color: #eef6fc;
+  color: #326fa8;
 }
 
 .menu a.active {
-  background-color: #f6e7da;
+  background-color: #e3f0fb;
   color: #333;
   font-weight: 600;
 }
@@ -71,7 +75,7 @@
 
 @media (max-width: 58rem) {
   .navbar {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 44px;
   }
 
   .logo {
@@ -82,7 +86,11 @@
     grid-row: 2;
     grid-column: 1 / -1;
     flex-wrap: wrap;
+    display: none;
   }
+  .menu.menu-open { display: flex; justify-content: flex-start; padding: 8px 0; }
+  .menu-toggle { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #dce3e2; border-radius: 8px; background: #fff; color: #28508d; }
+  .menu-toggle svg { width: 24px; height: 24px; }
 }
 
 @media (max-width: 30rem) {

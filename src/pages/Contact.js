@@ -1,7 +1,27 @@
 import { Icon } from "@iconify/react";
 import "./Contact.css";
+import { useState } from "react";
 
 function Contact() {
+  const [copyStatus, setCopyStatus] = useState("");
+  const copyEmail = async () => {
+    let copied = false;
+    try {
+      if (navigator.clipboard) { await navigator.clipboard.writeText("naththaphrnh@gmail.com"); copied = true; }
+    } catch { /* Clipboard permissions vary between browsers. */ }
+    if (!copied) {
+      const field = document.createElement("textarea");
+      field.value = "naththaphrnh@gmail.com";
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.append(field);
+      field.select();
+      try { copied = document.execCommand("copy"); } catch { copied = false; }
+      field.remove();
+      document.getElementById("copy-contact-email")?.focus({ preventScroll: true });
+    }
+    setCopyStatus(copied ? "คัดลอกอีเมลแล้วค่ะ" : "คัดลอกไม่ได้ กรุณาเลือกอีเมลเพื่อคัดลอก");
+  };
 
   return (
     <div className="contact-page">
@@ -36,8 +56,9 @@ function Contact() {
 
             <div>
               <span>Gmail</span>
-              <p>naththaphrnh@gmail.com</p>
+              <a href="mailto:naththaphrnh@gmail.com">naththaphrnh@gmail.com</a>
             </div>
+            <button type="button" id="copy-contact-email" className="copy-contact-email" title="Copy email" aria-label="Copy email" onClick={copyEmail}><Icon icon="mdi:content-copy" aria-hidden="true" /></button>
           </div>
 
           <div className="contact-item">
@@ -51,7 +72,7 @@ function Contact() {
 
             <div>
               <span>Phone</span>
-              <p>062 470 2688</p>
+              <a href="tel:+66624702688">062 470 2688</a>
             </div>
           </div>
 
@@ -89,6 +110,7 @@ function Contact() {
             </div>
           </div>
         </div>
+        <p className="contact-copy-status" role="status">{copyStatus}</p>
       </section>
 
       {/* =========================
