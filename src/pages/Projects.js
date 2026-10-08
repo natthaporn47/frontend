@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { projects } from "../data/projects";
 import ProjectDetails from "../components/ProjectDetails";
+import ProjectVisual from "../components/ProjectVisual";
 
 function Projects() {
 	const location = useLocation();
@@ -12,7 +13,7 @@ function Projects() {
 	const filters = ["All", "Web", "Mobile", "IoT"];
 	const visibleProjects = projects.filter((project) => filter === "All" || (filter === "Mobile" ? project.id === "hungryhub" : filter === "IoT" ? project.id === "agricultural-spraying" : project.id !== "hungryhub"));
 	return (
-		<main className="projects-page">
+		<main className="projects-page detail-paper">
 			<header className="projects-heading">
 				<div>
 					<span className="page-kicker">PROJECTS</span>
@@ -39,6 +40,7 @@ function Projects() {
 								<div className="project-card-number">{String(projects.indexOf(project) + 1).padStart(2, "0")}<span /></div>
 								<span className="project-category">{project.category}</span>
 								<h2>{project.title}</h2>
+                <ProjectVisual project={project} />
                 <p className="project-description">{project.description}</p>
                 <div className="project-work"><span>My Work</span><p>{project.myWork}</p></div>
                 <div className="project-tech">
@@ -54,6 +56,7 @@ function Projects() {
 						</article>
 				))}
 			</section>
+			<a className="projects-github" href="https://github.com/natthaporn47" target="_blank" rel="noreferrer"><Icon icon="mdi:github" /><span><strong>More projects on GitHub</strong><small>@natthaporn47</small></span><span>{projects.length} Projects <Icon icon="mdi:arrow-top-right" /></span></a>
 			{selectedProject && <ProjectDetails project={selectedProject} onDismiss={() => setSelectedProject(null)} />}
 		</main>
 	);

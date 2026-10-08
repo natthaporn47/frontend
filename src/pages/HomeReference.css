@@ -1,0 +1,144 @@
+.home-root.home-notebook.home-reference {
+  --home-ink: #163a55;
+  --home-blue: #2878cb;
+  --home-muted: #506d83;
+  background: #f8fbfd;
+}
+.home-reference.home-notebook .hero { min-height: 640px; padding-top: 66px; padding-bottom: 100px; }
+.home-reference.home-notebook .hero-text { width: 46%; }
+.home-reference.home-notebook .hello { font-size: 30px; }
+.home-reference.home-notebook .hero h1 { font-size: 74px; line-height: 1.03; margin-bottom: 16px; }
+.home-reference.home-notebook .hero h2 { font-size: 15px; font-weight: 600; padding: 5px 9px; border: 0; background: #dceeff; color: #226eb4; }
+.home-reference .typing-line { display: none; }
+.home-reference .hero-role-list { margin: 18px 0 0; padding-left: 15px; border-left: 3px solid #2878cb; font-size: 16px; line-height: 1.65; }
+.home-reference.home-notebook .hero-personal-intro { font-size: 14px; line-height: 1.9; max-width: 330px; }
+.home-reference .hero-socials a { width: 35px; height: 35px; font-size: 20px; }
+.home-reference .hero-socials a:first-child { background: #173b54; color: white; }
+.home-reference .hero-cta { background: #173b54; min-height: 42px; }
+.home-reference.home-notebook .hero-scene { width: 54%; height: 540px; top: 26px; }
+.home-reference.home-notebook .hero-code-paper { top: 15px; left: 5%; width: 80%; height: 355px; rotate: -4deg; }
+.home-reference.home-notebook .hero-code-paper pre { font-size: 12px; line-height: 1.55; }
+.home-reference.home-notebook .hero-character { top: 86px; left: 19%; width: 86%; height: 450px; object-fit: cover; object-position: center top; }
+.home-reference.home-notebook .hero-interest-badges button { min-width: 86px; min-height: 43px; justify-content: center; font-size: 20px; padding: 10px; }
+.home-reference.home-notebook .hero-interest-badges .badge-0 { top: 33px; right: -2%; background: #ffe2dc; color: #aa5148; }
+.home-reference.home-notebook .hero-interest-badges .badge-2 { top: 111px; right: -3%; background: #ddecff; color: #286cab; }
+.home-reference.home-notebook .hero-interest-badges .badge-3 { top: 189px; right: -2%; background: #fff0c8; color: #7d6431; }
+.home-reference.home-notebook .hero-interest-badges .badge-1 { top: 267px; right: 0; background: #dcf3e9; color: #367a65; }
+.home-reference.home-notebook .hero-interest-badges button[aria-pressed="true"] { outline: 2px solid #407993; outline-offset: 3px; }
+.home-reference.home-notebook .hero-speech-note { display: block; top: 10px; left: -19%; width: 103px; border: 0; background: transparent; font-size: 19px; }
+.home-reference.home-notebook .scrapbook-sun { left: 1%; top: 32px; }
+.home-reference.home-notebook .scrapbook-code-sticker { left: 1%; bottom: 90px; }
+.home-reference.home-notebook .hero-interest-note { bottom: -50px; left: 35%; right: 0; }
+.home-reference .hero-scroll-note { left: 50%; transform: translateX(-50%); bottom: 23px; flex-direction: column; font-size: 15px; }
+.home-reference .hero-scroll-note svg:first-child { width: 26px; height: 32px; }
+.home-reference.home-notebook .home-section-inner::before { display: none; }
+.home-reference.home-notebook .home-section { padding-block: 32px; }
+.home-reference.home-notebook .home-section h2 { font-size: 38px; color: #163a55; }
+.home-reference .home-section-heading { align-items: center; }
+.home-reference .home-skills .home-section-inner { display: grid; grid-template-columns: 1fr auto; column-gap: 20px; }
+.home-reference .home-skills .home-section-heading { margin-bottom: 0; }
+.home-reference .home-skills .home-section-heading p, .home-reference .home-skills .home-more-link { display: none; }
+.home-reference.home-notebook .scrapbook-filters { align-self: center; justify-content: flex-end; margin: 0; gap: 6px; }
+.home-reference .scrapbook-filters button { min-height: 32px; font-size: 11px; padding: 7px 12px; }
+.home-reference .scrapbook-filters button[aria-pressed="true"] { background: #173b54; }
+.home-reference .home-skills-carousel, .home-reference .skill-filter-count { grid-column: 1 / -1; }
+.home-reference.home-notebook .scrapbook-skill-grid { grid-auto-columns: 80px; gap: 10px; }
+.home-reference.home-notebook .scrapbook-skill { min-height: 108px; border: 1px solid #e4ebee; box-shadow: 0 5px 13px #183b5410; color: #24445c; }
+.home-reference.home-notebook .scrapbook-skill > svg { width: 40px; height: 40px; }
+.home-reference .home-work-grid { gap: 20px; }
+.home-reference.home-notebook .home-work-preview { rotate: 0deg; min-height: 305px; box-shadow: 0 7px 18px #2247680b; }
+.home-reference.home-notebook .home-work-preview:hover { rotate: -1deg; translate: 0 -5px; }
+.home-reference .home-work-copy { padding: 45px 18px 18px; }
+.home-reference.home-notebook .home-work-copy h3 { font-size: 27px; min-height: 85px; padding-right: 40%; }
+.home-reference.home-notebook .home-work-category { max-width: 53%; font-size: 12px; line-height: 1.5; min-height: 55px; }
+.home-reference .home-work-copy p { display: none; }
+.home-reference .home-work-tags { padding-right: 35px; margin-top: 22px; }
+.home-reference.home-notebook .home-work-tags span { font-size: 10px; color: #3574a4; background: #ffffffbb; padding: 4px 7px; }
+.home-reference .home-work-cta { margin-top: 12px; }
+.home-reference .home-work-cta > span { font-size: 11px; color: #44687f; }
+.home-reference .home-project-art { position: absolute; top: 67px; right: 13px; width: 39%; height: 137px; display: grid; place-items: center; pointer-events: none; }
+.home-reference .home-project-art img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 4px #34546b20); rotate: 5deg; }
+.home-reference .home-project-art > svg { width: 80%; height: 100px; color: #ac7953; rotate: 7deg; }
+.home-reference .green .home-project-art > svg { color: #5d9c77; }
+.home-reference .home-project-pin { position: absolute; top: -10px; right: 20px; width: 27px; height: 36px; color: #dd8d82; rotate: 20deg; }
+.home-reference .project-sticker-number { color: #24445c; font-size: 23px; }
+.home-reference .home-learning-summary { max-width: 310px; border-left: 1px dashed #c3d9e8; padding-left: 24px; }
+.home-reference .home-learning-summary h3 { font: 26px/1.2 "Patrick Hand", cursive; margin: 0 0 16px; }
+.home-reference .home-learning-summary ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.home-reference .home-learning-summary li { background: #e9f2fc; border-radius: 5px; padding: 8px 10px; font-size: 12px; }
+.home-reference .home-github-handle { display: inline-flex; gap: 7px; align-items: center; color: #476e8b; text-decoration: none; font-size: 14px; }
+.home-reference .home-github-handle svg { width: 17px; height: 17px; }
+.home-reference.home-notebook .journey-facts { box-shadow: none; background: transparent; border: 0; border-left: 1px dashed #c3d9e8; border-radius: 0; }
+.home-reference .home-about { border-block: 1px solid #e0ecf3; margin-top: 0; }
+.home-reference.home-notebook .hero-character { object-fit: contain; object-position: center bottom; top: 58px; left: 10%; width: 94%; height: 480px; }
+.home-reference .home-about-copy > p { font-size: 14px; line-height: 1.85; }
+.home-reference .home-about .scrapbook-about-facts > div { font-size: 12px; }
+.home-reference .home-project-art.project-preview-mobile { display: flex; align-items: center; justify-content: center; gap: 6px; width: 43%; right: 9px; }
+.home-reference .project-preview-mobile img { width: 47%; height: 126px; object-fit: contain; background: #faf9f5; border: 3px solid #244154; border-radius: 7px; rotate: -7deg; }
+.home-reference .project-preview-mobile img:nth-child(2) { rotate: 7deg; translate: 0 -10px; }
+.home-reference .home-project-art.project-preview-desktop { width: 43%; height: 105px; top: 95px; }
+.home-reference .project-preview-desktop img { width: 100%; height: 85px; object-fit: contain; background: #f6fbff; border: 5px solid #244154; border-radius: 5px; rotate: -4deg; }
+.home-reference .project-preview-desktop::after { content: ""; position: absolute; bottom: 7px; width: 110%; height: 7px; background: #8a9ba7; border-radius: 0 0 5px 5px; rotate: -4deg; }
+.home-reference .home-project-item { min-width: 0; }
+.home-reference .home-project-item .home-work-preview { min-height: 360px; height: auto; }
+.home-reference .home-project-item .home-work-copy { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.home-reference .home-project-item .home-work-tags { margin-top: auto; padding-top: 18px; }
+.home-reference .home-project-photos { padding-top: 18px; }
+.home-reference .home-project-photo-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; font-size: 12px; color: #506d83; }
+.home-reference .home-project-photo-heading span:first-child { font-weight: 600; color: #24445c; }
+.home-reference .home-project-photo-rail { display: grid; grid-auto-flow: column; grid-auto-columns: 106px; gap: 8px; overflow-x: auto; padding: 3px 3px 12px; scrollbar-width: thin; scrollbar-color: #a5c6dc transparent; scroll-snap-type: x proximity; }
+.home-reference .home-project-photo-rail button { min-width: 0; padding: 7px; border: 1px solid #dbe6ee; border-radius: 6px; background: white; color: #365b76; cursor: pointer; scroll-snap-align: start; }
+.home-reference .home-project-photo-rail img { display: block; width: 100%; height: 90px; object-fit: contain; }
+.home-reference .home-project-photo-rail span { display: block; margin-top: 7px; min-height: 30px; font-size: 10px; line-height: 1.5; overflow-wrap: anywhere; }
+.home-reference .home-project-photo-rail button:hover { border-color: #73a7ce; background: #f0f8fd; }
+.home-reference .home-project-photo-rail button:focus-visible { outline: 2px solid #2878cb; outline-offset: 1px; }
+.home-reference.home-notebook .home-about { padding-block: 40px; }
+.home-reference.home-notebook .home-about-copy > p { font-size: 14px; }
+.home-reference.home-notebook .home-work-copy h3 { overflow-wrap: anywhere; }
+.project-dialog .project-gallery-stage img { height: 340px; }
+.project-dialog .project-gallery-thumbnails { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+@media (max-width: 1199px) {
+  .home-reference.home-notebook .hero h1 { font-size: 62px; }
+  .home-reference.home-notebook .hero h2 { font-size: 13px; }
+  .home-reference .home-skills .home-section-inner { grid-template-columns: 1fr; }
+  .home-reference.home-notebook .scrapbook-filters { justify-content: flex-start; margin: 8px 0; }
+  .home-reference .home-work-grid { gap: 13px; }
+  .home-reference.home-notebook .home-work-copy h3 { font-size: 23px; }
+}
+@media (max-width: 900px) and (min-width: 681px) {
+  .home-reference.home-notebook .hero h1 { font-size: 48px; }
+  .home-reference.home-notebook .hero-scene { top: 68px; height: 440px; }
+  .home-reference.home-notebook .hero-character { height: 370px; left: 7%; width: 95%; }
+  .home-reference.home-notebook .hero-code-paper { width: 85%; height: 300px; }
+  .home-reference.home-notebook .hero-code-paper pre { font-size: 9px; }
+  .home-reference.home-notebook .hero-interest-badges button { min-width: 65px; font-size: 16px; }
+  .home-reference.home-notebook .hero-speech-note { display: none; }
+}
+@media (max-width: 680px) {
+  .home-reference.home-notebook .hero { padding-top: 32px; padding-bottom: 105px; min-height: 0; }
+  .home-reference.home-notebook .hero-text { width: 100%; }
+  .home-reference.home-notebook .hero h1 { font-size: 54px; }
+  .home-reference.home-notebook .hero h2 { font-size: 13px; }
+  .home-reference.home-notebook .hero-scene { position: relative; top: auto; width: 100%; height: 430px; margin-top: 36px; }
+  .home-reference.home-notebook .hero-code-paper { top: 0; left: 0; width: 82%; height: 280px; }
+  .home-reference.home-notebook .hero-code-paper pre { font-size: 10px; }
+  .home-reference.home-notebook .hero-character { top: 54px; left: 8%; width: 92%; height: 370px; }
+  .home-reference.home-notebook .hero-interest-badges button { min-width: 70px; min-height: 37px; padding: 7px; font-size: 16px; }
+  .home-reference.home-notebook .hero-interest-badges .badge-0 { top: 15px; right: 0; }
+  .home-reference.home-notebook .hero-interest-badges .badge-2 { top: 75px; right: 0; }
+  .home-reference.home-notebook .hero-interest-badges .badge-3 { top: 135px; right: 0; }
+  .home-reference.home-notebook .hero-interest-badges .badge-1 { top: 195px; right: 0; }
+  .home-reference.home-notebook .hero-speech-note { display: none; }
+  .home-reference.home-notebook .hero-interest-note { bottom: -58px; left: 0; }
+  .home-reference .hero-scroll-note { left: 0; transform: none; bottom: 12px; flex-direction: row; }
+  .home-reference.home-notebook .home-section h2 { font-size: 31px; }
+  .home-reference .home-work-grid { grid-template-columns: 1fr; gap: 24px; }
+  .home-reference.home-notebook .home-work-copy h3 { font-size: 30px; padding-right: 43%; min-height: 80px; }
+  .home-reference .home-project-art { height: 150px; width: 40%; }
+  .home-reference .home-journey .home-section-heading { align-items: stretch; flex-direction: column; gap: 28px; }
+  .home-reference .home-learning-summary { border-left: 0; border-top: 1px dashed #c3d9e8; padding: 22px 0 0; max-width: none; }
+}
+@media (max-width: 360px) {
+  .home-reference.home-notebook .hero h1 { font-size: 46px; }
+  .home-reference.home-notebook .hero-character { height: 310px; }
+}

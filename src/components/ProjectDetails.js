@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
+import ProjectGallery from "./ProjectGallery";
 
-export default function ProjectDetails({ project, onDismiss }) {
+export default function ProjectDetails({ project, onDismiss, initialScreenshot = 0 }) {
   const dialog = useRef(null);
   useEffect(() => {
     const modal = dialog.current;
@@ -23,8 +25,10 @@ export default function ProjectDetails({ project, onDismiss }) {
     <header className="project-dialog-toolbar"><span>PROJECT NOTES</span><button type="button" aria-label="Close project details" title="Close project details" onClick={onDismiss}><Icon icon="mdi:close" aria-hidden="true" /></button></header>
     <div className="project-dialog-heading"><Icon icon={project.icon} aria-hidden="true" /><span>{project.category}</span><h2 id="project-dialog-title">{project.title}</h2></div>
     <p className="project-dialog-description">{project.description}</p>
+    {project.screenshots?.length > 0 && <ProjectGallery screenshots={project.screenshots} initialIndex={initialScreenshot} />}
     <section><h3>My Contribution</h3><p>{project.myWork}</p></section>
     <section><h3>Project Highlights</h3><ul>{project.features.map((feature) => <li key={feature}><Icon icon="mdi:check-circle-outline" aria-hidden="true" /><span>{feature}</span></li>)}</ul></section>
     <section><h3>Built With</h3><div className="project-tags">{project.tags.map(([label, icon]) => <span key={label}><Icon icon={icon} aria-hidden="true" />{label}</span>)}</div></section>
+    <Link className="paper-button project-modal-link" to={`/projects/${project.id}`}>Open Project Page <Icon icon="mdi:arrow-right" /></Link>
   </dialog>;
 }

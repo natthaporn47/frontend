@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { addCollection } from '@iconify/react';
+import iconsets from './data/iconsets.json';
+
+iconsets.forEach(collection => addCollection(collection));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

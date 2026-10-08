@@ -34,6 +34,7 @@ function Hero() {
                     <h1 id="home-title"><span>Nattaporn</span><span>Wangsuk</span></h1>
                     <h2>Computer Engineering Student</h2>
                     <TypingLine />
+                    <p className="hero-role-list">Frontend Developer<br />Web Developer<br />Software Developer</p>
                     <p className="hero-personal-intro">สวัสดีค่ะ ฉันชื่อ Earn สนใจการออกแบบ<br />การพัฒนาเว็บ แอปมือถือ และระบบ IoT</p>
                     <div className="scrapbook-hero-actions">
                         <a className="hero-cta" href="#home-projects">View My Projects <Icon icon="mdi:arrow-right" aria-hidden="true" /></a>
@@ -46,7 +47,9 @@ function Hero() {
                     </div>
                 </div>
                 <div ref={scene} className="hero-scene" aria-label="Creative workspace illustration">
-                    <img className="hero-character" src={`${process.env.PUBLIC_URL}/images/earn-workspace-blue.png`} alt="" aria-hidden="true" width="1536" height="1024" fetchPriority="high" />
+                    <div className="hero-code-paper" aria-hidden="true"><div><i /><i /><i /><span>earn.js</span></div><pre><span>const</span> developer = {'{'}<br />  name: <em>"Nattaporn"</em>,<br />  passion: [<br />    <em>"Web"</em>,<br />    <em>"Mobile"</em>,<br />    <em>"IoT"</em><br />  ]<br />{'}'};<br /><br /><b>{"// Keep learning."}<br />{"// Keep creating."}</b></pre></div>
+                    <p className="hero-speech-note">Let's build<br />something<br /><strong>amazing!</strong></p>
+                    <img className="hero-character" src={`${process.env.PUBLIC_URL}/images/earn-workspace-soft.png`} alt="Illustration of Nattaporn in a white dress working at a laptop" width="1024" height="1536" fetchPriority="high" />
                     <div className="hero-interest-badges" aria-label="Areas of interest">{interests.map((item, index) => <button key={item.label} className={`interest-badge badge-${index}`} type="button" aria-pressed={activeInterest === index} onClick={() => setActiveInterest(index)} title={item.focus}><Icon icon={item.icon} aria-hidden="true" />{item.label}</button>)}</div>
                     <span className="scrapbook-sun" aria-hidden="true"><Icon icon="mdi:white-balance-sunny" /></span>
                     <span className="scrapbook-code-sticker" aria-hidden="true"><Icon icon="mdi:code-tags" /></span>
@@ -59,7 +62,7 @@ function Hero() {
                     <dl><div><dt>Name</dt><dd>Nattaporn Wangsuk</dd></div><div><dt>Focus</dt><dd>{interest.focus}</dd></div><div><dt>Toolkit</dt><dd>{interest.tools}</dd></div></dl>
                     <Link to="/about">More about me <Icon icon="mdi:arrow-top-right" aria-hidden="true" /></Link>
                 </div>}
-                <a className="hero-scroll-note" href="#home-about"><span>Scroll a little</span><Icon icon="mdi:mouse" aria-hidden="true" /><Icon icon="mdi:chevron-down" aria-hidden="true" /></a>
+                <a className="hero-scroll-note" href="#home-about"><Icon icon="mdi:mouse" aria-hidden="true" /><span>Scroll Down</span><Icon icon="mdi:chevron-down" aria-hidden="true" /></a>
             </section>
         </div>
     );
