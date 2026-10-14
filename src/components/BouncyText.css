@@ -1,0 +1,23 @@
+.bouncy-text { white-space: normal; }
+.bouncy-word { display: inline-block; white-space: nowrap; }
+.bouncy-text .bouncy-letter { display: inline-block; color: inherit; transform-origin: center bottom; transition: color 200ms ease; }
+@keyframes heading-letter-spring {
+  0%, 100% { transform: translateY(0) scale(1); }
+  20% { transform: translateY(2px) scale(1.12, .88); }
+  48% { transform: translateY(-13px) scale(.94, 1.1); }
+  72% { transform: translateY(1px) scale(1.06, .94); }
+  88% { transform: translateY(-3px) scale(1); }
+}
+@media (hover: hover) {
+  .bouncy-text:hover .bouncy-letter { animation: heading-letter-spring 650ms var(--bounce-delay, 0ms) both; }
+  .bouncy-text-colorful:hover .bouncy-letter { color: var(--letter-color); }
+}
+@media (hover: none) {
+  .bouncy-text:active .bouncy-letter { animation: heading-letter-spring 650ms var(--bounce-delay, 0ms) both; }
+  .bouncy-text-colorful:active .bouncy-letter { color: var(--letter-color); }
+}
+.animated-sparkle { animation: sparkle-sway 3s ease-in-out infinite; transform-origin: center; }
+@keyframes sparkle-sway { 0%, 100% { rotate: -6deg; scale: 1; } 50% { rotate: 12deg; scale: 1.15; } }
+@media (prefers-reduced-motion: reduce) {
+  .bouncy-text .bouncy-letter, .animated-sparkle { animation: none !important; transition: none !important; }
+}

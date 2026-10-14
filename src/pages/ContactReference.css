@@ -1,12 +1,13 @@
 .contact-reference.contact-page { display: block; min-height: calc(100vh - 86px); }
-.contact-reference .contact-inner { width: 100%; max-width: 960px; margin-inline: auto; animation: contact-enter 450ms ease-out both; }
+.contact-reference.contact-page.contact-message-host { display: contents; min-height: 0; }
+.contact-reference .contact-inner { width: 100%; max-width: 960px; margin-inline: auto; }
 @keyframes contact-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .contact-reference .contact-inner { animation: none; } }
 .contact-reference .contact-heading { display: block; margin-bottom: 28px; }
 .contact-reference .contact-eyebrow { display: flex; align-items: center; gap: 12px; font: 23px/1.2 "Patrick Hand", cursive; color: #294b64; }
 .contact-reference .contact-eyebrow svg { width: 23px; height: 23px; color: #e5ad54; }
 .contact-reference.contact-page h1 { width: fit-content; max-width: 100%; margin: 18px 0 22px; font: 62px/1.1 "Patrick Hand", cursive; color: #17354e; rotate: -4deg; }
-.contact-reference h1 > span { color: #ed8291; }
+.contact-reference h1 > span:not(.bouncy-text) { color: #ed8291; }
 .contact-reference.contact-page .contact-intro { margin: 12px 0 8px; color: #294b64; font-size: 14px; line-height: 1.7; }
 .contact-reference .contact-welcome { margin: 0; color: #63809a; font-size: 13px; line-height: 1.8; }
 .contact-reference .contact-note { position: relative; padding-left: 35px; }
@@ -29,19 +30,24 @@
 .contact-reference.contact-page .contact-item a, .contact-reference .contact-item > span > span, .contact-reference .contact-location { font-size: 12px; color: #63809a; overflow-wrap: anywhere; }
 .contact-reference .contact-icon { flex-basis: 34px; width: 34px; height: 34px; background: #ffe5e8; color: #ef7386; }
 .contact-reference .contact-icon svg { width: 20px; height: 20px; }
+.contact-reference button.contact-email-trigger { padding: 0; border: 0; cursor: pointer; transition: translate 180ms ease; }
+.contact-reference button.contact-email-trigger:hover { translate: 0 -2px; }
 .contact-reference .contact-item:nth-child(2) .contact-icon { background: #e1f0ff; color: #4b91c9; }
 .contact-reference .contact-item:nth-child(3) .contact-icon { background: #e8f4ec; color: #529572; }
 .contact-reference .contact-item:nth-child(4) .contact-icon { background: #ffe5e8; color: #ef7386; }
 .contact-reference.contact-page .contact-copy-status { min-height: 0; margin: 0; }
 .contact-reference.contact-page .contact-copy-status:not(:empty) { margin-top: 14px; }
 .contact-reference .contact-socials { display: flex; gap: 12px; margin-top: 12px; }
-.contact-reference .contact-socials a { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: #17354e; background: #edf3f7; transition: translate 180ms ease; }
-.contact-reference .contact-socials a:nth-child(2) { color: #e17487; background: #ffe7eb; }
+.contact-reference .contact-socials a, .contact-reference .contact-socials button { display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border: 0; border-radius: 12px; color: #17354e; background: #edf3f7; transition: translate 180ms ease; cursor: pointer; }
+.contact-reference .contact-socials :nth-child(2) { color: #e17487; background: #ffe7eb; }
 .contact-reference .contact-socials a:nth-child(3) { color: #529572; background: #e8f4ec; }
-.contact-reference .contact-socials a:hover { translate: 0 -2px; }
+.contact-reference .contact-socials a:hover, .contact-reference .contact-socials button:hover { translate: 0 -2px; }
 .contact-reference .contact-socials svg { width: 26px; height: 26px; }
 .contact-reference .contact-form-heading { display: flex; justify-content: space-between; gap: 16px; }
-.contact-reference .contact-form-heading > svg { flex: 0 0 26px; width: 26px; height: 26px; color: #456f94; rotate: -15deg; }
+.contact-reference .contact-plane-decoration { position: relative; flex: 0 0 86px; height: 48px; color: #456f94; pointer-events: none; }
+.contact-reference .contact-plane-trail { position: absolute; inset: 0; width: 86px; height: 48px; }
+.contact-reference .contact-plane-icon { position: absolute; top: 0; right: 0; width: 36px; height: 36px; animation: contact-plane-float 4s ease-in-out infinite; }
+@keyframes contact-plane-float { 0%, 100% { translate: 0 0; rotate: -3deg; } 50% { translate: 2px -3px; rotate: 3deg; } }
 .contact-reference .contact-field-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .contact-reference .contact-form .contact-field { position: relative; display: block; margin-bottom: 12px; }
 .contact-reference .contact-field > svg { position: absolute; top: 13px; left: 13px; width: 17px; height: 17px; color: #71869a; pointer-events: none; }
@@ -61,6 +67,11 @@
 .contact-reference .contact-activation-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; max-width: 100%; min-height: 42px; margin-top: 12px; padding: 10px 16px; border: 1px solid #bdd7eb; border-radius: 999px; background: #e8f3fc; color: #294b64; font: inherit; font-size: 13px; cursor: pointer; }
 .contact-reference .contact-activation-button svg { flex: 0 0 18px; width: 18px; height: 18px; }
 .contact-reference .contact-activation-button:disabled { opacity: .65; cursor: wait; }
+.contact-reference .contact-dialog { width: min(520px, calc(100% - 32px)); max-height: calc(100svh - 32px); padding: 0; margin: auto; overflow: auto; border: 1px solid #dce6ef; border-radius: 20px; background: #fff; color: #294b64; box-shadow: 0 24px 80px #17354e40; }
+.contact-reference .contact-dialog::backdrop { background: #17354e80; }
+.contact-reference.contact-page .contact-dialog .contact-form { border: 0; border-radius: 0; box-shadow: none; }
+.contact-reference .contact-dialog-close { display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 36px; padding: 0; border: 1px solid #dce6ef; border-radius: 50%; background: #fff; color: #294b64; cursor: pointer; }
+.contact-reference .contact-dialog-close svg { width: 20px; height: 20px; }
 @media (max-width: 900px) {
   .contact-reference.contact-page h1 { font-size: 52px; }
   .contact-reference .contact-note > p { font-size: 19px; padding: 18px 14px; }

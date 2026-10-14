@@ -1,0 +1,26 @@
+.project-image-lightbox { --viewer-border: #e9a8ba; --viewer-tint: #fff0f3; --viewer-button: #ffdce0; --viewer-ink: #94475f; width: min(1100px, calc(100% - 48px)); max-height: calc(100svh - 48px); box-sizing: border-box; padding: 14px; overflow: visible; border: 2px solid var(--viewer-border); border-radius: 8px; background: #fff; color: #173b54; box-shadow: 6px 7px 0 var(--viewer-button); }
+.project-image-lightbox.coral { width: min(620px, calc(100% - 48px)); }
+.project-image-lightbox.blue { --viewer-border: #9bbfe3; --viewer-tint: #f0f6fc; --viewer-button: #dcecff; --viewer-ink: #326da6; }
+.project-image-lightbox.green { --viewer-border: #a4ceb3; --viewer-tint: #f0f8f3; --viewer-button: #dff1e4; --viewer-ink: #3d7551; }
+.project-image-lightbox::backdrop { background: #173b54b3; backdrop-filter: blur(4px); }
+.image-lightbox-stage { position: relative; display: grid; place-items: center; height: auto; min-height: 0; border: 1px solid var(--viewer-button); border-radius: 7px; background: var(--viewer-tint); overflow: visible; }
+.image-lightbox-stage img { display: block; width: 100%; height: auto; min-height: 0; max-height: min(64svh, 640px); object-fit: contain; border-radius: 6px; }
+.project-image-lightbox button { position: absolute; z-index: 1; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 2px solid var(--viewer-border); border-radius: 50%; background: var(--viewer-button); color: var(--viewer-ink); cursor: pointer; }
+.project-image-lightbox button svg { width: 24px; height: 24px; }
+.project-image-lightbox .image-lightbox-close { top: -18px; right: -18px; width: 48px; height: 48px; background: #fff; box-shadow: 0 0 0 3px #fff; }
+.image-lightbox-previous { left: -30px; top: calc(50% - 22px); }
+.image-lightbox-next { right: -30px; top: calc(50% - 22px); }
+.project-image-lightbox button:hover { background: var(--viewer-tint); }
+.project-image-lightbox button:focus-visible { outline: 3px solid #578db5; outline-offset: 4px; }
+.project-image-lightbox button:disabled { opacity: .45; cursor: default; }
+.image-lightbox-caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 4px 0; background: #fff; }
+.image-lightbox-caption h2 { min-width: 0; margin: 0; font: 400 22px/1.4 "Itim", sans-serif; overflow-wrap: anywhere; }
+.image-lightbox-caption span { flex-shrink: 0; padding: 5px 12px; border: 1px solid var(--viewer-border); border-radius: 999px; background: var(--viewer-button); color: var(--viewer-ink); font-size: 13px; line-height: 1.5; }
+@media (max-width: 600px) {
+  .project-image-lightbox { width: calc(100% - 40px); padding: 10px; }
+  .image-lightbox-stage img { max-height: 56svh; }
+  .project-image-lightbox .image-lightbox-close { top: -16px; right: -12px; width: 44px; height: 44px; }
+  .image-lightbox-previous { left: -22px; }
+  .image-lightbox-next { right: -22px; }
+  .image-lightbox-caption h2 { font-size: 18px; }
+}

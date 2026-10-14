@@ -33,7 +33,7 @@
   line-height: 0.9;
 }
 
-.projects-heading h1 span { color: #28508d; }
+.projects-heading h1 > span:not(.bouncy-text) { color: #28508d; }
 
 .projects-heading p {
   margin: 0;
@@ -222,7 +222,7 @@
 .projects-page.detail-paper { background: #f9fcff; }
 .projects-heading { align-items: center; margin-bottom: 24px; }
 .projects-heading h1 { font: 48px/1.12 "Patrick Hand", cursive; letter-spacing: 0; margin-top: 0; }
-.projects-heading h1 span { color: #4f8fbd; }
+.projects-heading h1 > span:not(.bouncy-text) { color: #4f8fbd; }
 .projects-heading br { display: none; }
 .projects-heading p { margin-top: 12px; color: #5b7891; line-height: 1.8; font-size: 13px; }
 .projects-summary { min-width: 0; border: 0; padding: 16px; background: #eaf4fc; rotate: 4deg; }

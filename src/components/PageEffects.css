@@ -7,11 +7,21 @@ button { font: inherit; cursor: pointer; }
 .reading-progress { position: fixed; inset: 0 0 auto; height: 3px; z-index: 100; background: #397c74; transform: scaleX(0); transform-origin: left; pointer-events: none; }
 .scroll-reveal { opacity: 0; translate: 0 18px; transition: opacity 650ms ease var(--reveal-delay, 0ms), translate 650ms ease var(--reveal-delay, 0ms); }
 .scroll-reveal.is-revealed { opacity: 1; translate: 0 0; }
-.back-to-top { position: fixed; right: 20px; bottom: 20px; z-index: 30; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #d6dfdd; border-radius: 8px; background: #fff; color: #28508d; box-shadow: 0 4px 16px #17243818; }
+:is(.home-reference, .skills-reference, .projects-reference, .contact-reference, .project-showcase) .scroll-reveal { transition: opacity 650ms ease var(--reveal-delay, 0ms); }
+:is(.home-reference, .skills-reference, .projects-reference, .contact-reference, .project-showcase) .scroll-reveal.is-revealed { animation: page-item-pop 750ms var(--reveal-delay, 0ms) both; }
+.skills-reference .skills-inner, .contact-reference .contact-inner { animation: none; }
+@keyframes page-item-pop {
+  0% { opacity: 0; transform: translateY(26px) scale(.97); }
+  70% { opacity: 1; transform: translateY(-3px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.back-to-top { position: fixed; right: 20px; bottom: 20px; z-index: 30; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #8aafce; color: #fff; box-shadow: 0 3px 10px #1724380d; transition: background 180ms ease, transform 180ms ease; }
+.back-to-top:hover { background: #709abb; transform: translateY(-2px); }
 .back-to-top svg { width: 22px; height: 22px; }
 .skill-icons > span, .tool-list > span { transition: translate 180ms ease; }
 .skill-icons > span:hover, .tool-list > span:hover { translate: 0 -5px; }
 @media (prefers-reduced-motion: reduce) {
+  .back-to-top:hover { transform: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .scroll-reveal { opacity: 1; translate: none; }
 }

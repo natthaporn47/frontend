@@ -1,15 +1,17 @@
 .skills-reference.skills-page { background: #f8fbfd; }
-.skills-reference .skills-inner { width: 100%; min-width: 0; animation: skills-page-enter 450ms ease-out both; }
+.skills-reference .skills-inner { width: 100%; min-width: 0; }
 @keyframes skills-page-enter {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.skills-reference .skills-inner .scroll-reveal { opacity: 1; transform: none; transition: none; }
 .skills-reference.skills-page .skills-hero { display: block; margin-bottom: 24px; }
 .skills-reference .skills-heading { text-align: left; }
+.skills-reference.skills-page .skills-heading h1 { display: inline-flex; align-items: center; gap: 12px; max-width: 100%; }
+.skills-reference .skills-title-spark { flex: 0 0 28px; width: 28px; height: 28px; color: #e5ad54; }
+.skills-reference .skills-heading h1 .bouncy-text { min-width: 0; }
 .skills-reference .skills-owner { display: block; color: #557a95; font-size: 12px; margin-bottom: 12px; }
 .skills-reference.skills-page h1 { display: inline-block; font-size: 58px; line-height: 1.03; margin: 0 0 18px; rotate: -4deg; transform-origin: left center; }
-.skills-reference h1 > span { color: #df8b91; }
+.skills-reference h1 > span:not(.bouncy-text) { color: #df8b91; }
 .skills-reference.skills-page .skills-heading > p { max-width: 460px; margin-inline: 0; font-size: 14px; line-height: 1.8; }
 .skills-reference .skills-heading blockquote { margin: 20px 0 0; color: #537b99; font: 20px/1.35 "Patrick Hand", cursive; }
 .skills-reference .skills-hero-art { position: relative; height: 285px; min-width: 0; }
@@ -102,6 +104,8 @@
 .skills-reference .skill-area-tools .skill-group-art { color: #8970bc; background: #e9defb; border-color: #cfc0e7; }
 .skills-reference .skill-area-iot .skill-group-art { color: #b88c39; background: #ffebbd; border-color: #e2c58e; }
 .skills-reference .skill-group-art .skill-group-symbol { width: 28px; height: 28px; }
+.skills-reference button.skill-group-art { padding: 0; color: #294b64; cursor: pointer; transition: scale 180ms ease; }
+.skills-reference button.skill-group-art:hover { scale: 1.08; }
 .skills-reference .skill-art-spark { position: absolute; width: 17px; height: 17px; right: -8px; top: -6px; color: #d6a653; }
 .skills-reference .skill-group header p { margin-top: 4px; font-size: 11px; }
 .skills-reference.skills-page .skill-group h2 { font-size: 22px !important; }
@@ -145,7 +149,7 @@
   .skills-reference.skills-page .paper-filters { width: 100%; flex-wrap: nowrap; }
   .skills-reference .paper-filters button { flex: 1 0 auto; }
   .skills-reference .skills-approach { grid-template-columns: minmax(0, 1fr); }
-  .skills-reference .skills-approach > h2 { rotate: 0deg; }
+  .skills-reference .skills-approach > h2 { rotate: none; }
   .skills-reference .skills-approach-items { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .skills-reference.skills-page .skill-groups .skill-group .skill-icons { grid-template-columns: repeat(auto-fit, minmax(0, 64px)); width: 100%; max-width: 344px; align-self: center; justify-content: center; gap: 6px; margin-top: 0; }

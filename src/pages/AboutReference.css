@@ -1,0 +1,132 @@
+.about-reference .about-inner { width: 100%; max-width: 1000px; margin-inline: auto; animation: about-page-enter 500ms ease-out both; }
+@keyframes about-page-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.about-reference .about-inner { animation: none; }
+.about-reference .scroll-reveal { transition: opacity 650ms ease var(--reveal-delay, 0ms); }
+.about-reference .scroll-reveal.is-revealed { animation: about-item-pop 750ms var(--reveal-delay, 0ms) both; }
+@keyframes about-item-pop { 0% { opacity: 0; transform: translateY(26px) scale(.97); } 70% { opacity: 1; transform: translateY(-3px) scale(1.01); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+.about-reference.about-page .about-portrait.scroll-reveal { animation: none; }
+.about-reference.about-page .about-portrait.scroll-reveal.is-revealed { animation: about-item-pop 750ms var(--reveal-delay, 0ms) both, about-portrait-float 4s calc(var(--reveal-delay, 0ms) + 750ms) ease-in-out infinite; }
+.about-reference .about-portrait-column h1 > svg { transition: rotate 200ms ease, scale 200ms ease; }
+@media (hover: hover) { .about-reference .about-portrait-column h1:hover > svg { rotate: 12deg; scale: 1.15; } }
+.about-reference.about-page .about-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); gap: 54px; align-items: center; }
+.about-reference.about-page .about-portrait { position: relative; box-sizing: border-box; width: min(220px, 100%); max-width: 220px; margin: 16px auto 22px; padding: 10px 10px 48px; border: 1px solid #e1e8ed; border-radius: 5px; background: #fff; box-shadow: 0 8px 20px #27445e12; rotate: -8deg; animation: about-portrait-float 4s ease-in-out infinite; }
+@keyframes about-portrait-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+.about-reference .about-portrait::before { position: absolute; content: ""; top: -12px; left: 28px; width: 88px; height: 24px; background: #c6e5f3c9; rotate: -6deg; }
+.about-reference .about-photo-space { width: 100%; aspect-ratio: 4 / 5; background: #f2f7fb; border: 1px solid #e8eef3; }
+.about-reference .about-photo-space img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.about-reference .about-portrait figcaption { position: absolute; right: 12px; bottom: 8px; padding: 8px 24px 8px 4px; color: #294b64; font: 16px/1.05 "Patrick Hand", cursive; white-space: nowrap; rotate: 5deg; }
+.about-reference .about-portrait figcaption svg { position: absolute; right: 0; bottom: 8px; width: 22px; height: 22px; }
+.about-reference .about-copy { position: relative; min-width: 0; }
+.about-reference.about-page h1 { display: flex; align-items: center; gap: 12px; margin: 0 0 18px; font: 46px/1.1 "Patrick Hand", cursive; color: #17354e; }
+.about-reference.about-page h1 svg { width: 26px; height: 26px; color: #e6ad55; }
+.about-reference .about-portrait-column { min-width: 0; }
+.about-reference.about-page .about-portrait-column h1 { width: fit-content; max-width: 100%; margin: 0 auto 28px; rotate: -5deg; }
+.about-reference.about-page .about-copy h2 { margin: 0 0 8px; color: #294b64; font: 34px/1.2 "Patrick Hand", cursive; }
+.about-reference.about-page .about-copy > .about-thai-name { margin-bottom: 8px; font-family: "Itim", cursive; font-size: 22px; font-weight: 400; color: #294b64; }
+.about-reference.about-page .about-copy > p { max-width: 550px; margin: 0; font-size: 14px; line-height: 1.85; }
+.about-reference.about-page .about-facts { margin: 18px 0 0; }
+.about-reference.about-page .about-facts > div { grid-template-columns: 20px 90px minmax(0, 1fr); gap: 10px; margin-block: 12px; font-size: 13px; line-height: 1.65; }
+.about-reference .about-facts svg { color: #eb907c; }
+.about-reference .about-facts dd { color: #385f80; overflow-wrap: anywhere; }
+.about-reference .about-paperplane { position: absolute; right: 8px; bottom: -36px; display: flex; align-items: flex-end; gap: 8px; height: 40px; color: #619bc9; rotate: -16deg; }
+.about-reference .about-paperplane > svg:first-child { width: 20px; height: 20px; }
+.about-reference .about-paperplane > svg:last-child { width: 36px; height: 36px; }
+.about-reference.about-page .about-journey { margin-top: 28px; }
+.about-reference.about-page .about-journey > h2 { display: flex; align-items: center; gap: 12px; margin: 0; color: #17354e; font: 32px/1.2 "Patrick Hand", cursive; }
+.about-reference .about-journey > h2 svg { width: 24px; height: 24px; color: #e6ad55; }
+.about-reference .about-journey ol { gap: 14px; margin-top: 16px; }
+.about-reference.about-page .about-journey li { min-width: 0; padding: 16px; border: 1px solid #e1e8ed; border-radius: 8px; background: #fff; box-shadow: 0 5px 16px #27445e08; }
+.about-reference .about-journey li > small { display: block; margin-bottom: 10px; color: #497497; font: 19px/1 "Patrick Hand", cursive; }
+.about-reference .about-journey li > svg { top: 14px; right: 14px; width: 20px; height: 20px; }
+.about-reference .about-journey li:nth-child(1) > svg { color: #ef907e; }
+.about-reference .about-journey li:nth-child(2) > svg { color: #659ed4; }
+.about-reference .about-journey li:nth-child(3) > svg { color: #64ad9a; }
+.about-reference .about-journey li:nth-child(4) > svg { color: #a48aca; }
+.about-reference.about-page .about-journey h3 { margin: 0 0 8px; color: #294b64; font: 22px/1.15 "Patrick Hand", cursive; }
+.about-reference.about-page .about-journey p { font-size: 12px; line-height: 1.75; }
+.about-reference.about-page .about-education { position: relative; grid-template-columns: 42px minmax(0, 1fr); gap: 16px; align-items: start; margin-top: 26px; padding: 22px 22px 36px; border: 1px solid #d8e8d7; border-radius: 8px; background: #edf7ee; box-shadow: 0 4px 0 #d1e2d5, 0 12px 24px #26415e14; }
+.about-reference .about-education::after { content: ""; position: absolute; left: 22px; right: 22px; bottom: 16px; height: 4px; border-radius: 999px; background: #abd7ae; }
+.about-reference.about-page .about-education h2 { margin: 0 0 10px !important; color: #17354e; font: 32px/1.2 "Patrick Hand", cursive; }
+.about-reference .about-education > svg { align-self: start; }
+.about-reference .about-education strong { display: block; line-height: 1.65; }
+.about-reference .about-education p { margin: 6px 0 0; font-size: 13px; line-height: 1.75; }
+.about-reference .about-education-history { position: relative; display: grid; gap: 34px; margin: 24px 0 0; padding: 0 0 14px 76px; list-style: none; }
+.about-reference .about-education-history::before { content: ""; position: absolute; top: -12px; bottom: 0; left: 27px; width: 2px; background: #9eb8c8; transform-origin: top; animation: about-timeline-draw 700ms 150ms ease-out both; }
+@keyframes about-timeline-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.about-reference .about-education-history li { position: relative; min-width: 0; }
+.about-reference .about-education-marker { position: absolute; left: -55px; top: 10px; z-index: 1; width: 14px; height: 14px; border: 2px solid #497ca4; border-radius: 50%; background: #f6ce68; box-shadow: 2px 2px 0 #d5e4ed; transition: box-shadow 200ms ease; }
+.about-reference .about-education.is-revealed .about-education-marker { animation: about-marker-bob 2800ms ease-in-out infinite; }
+.about-reference .about-education-history li:nth-child(2) .about-education-marker { animation-delay: 600ms; }
+@keyframes about-marker-bob { 0%, 100% { translate: 0 -2px; } 50% { translate: 0 2px; } }
+.about-reference .about-education-marker svg { width: 29px; height: 29px; }
+.about-reference .about-education-history li:nth-child(2) .about-education-marker { background: #ffe6ef; }
+.about-reference .about-education-history li + li { padding-top: 0; border: 0; }
+.about-reference .about-education-history strong { font-size: 15px; font-weight: 600; }
+.about-reference .about-education-year { display: inline-block; max-width: 100%; margin: 0 0 4px; padding: 4px 10px; border: 0; border-radius: 4px; background: #17354e; color: #fff; font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.5; box-shadow: 2px 3px 0 #b8ccd4, 0 5px 10px #17354e20; }
+.about-reference .about-education.is-revealed .about-education-year { animation: about-year-float 3200ms ease-in-out infinite; transition: transform 200ms ease, box-shadow 200ms ease; }
+.about-reference .about-education-history li:nth-child(2) .about-education-year { animation-delay: 500ms; }
+@keyframes about-year-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -2px; } }
+.about-reference.about-page .about-portrait { transition: rotate 250ms ease, translate 250ms ease, box-shadow 250ms ease; }
+.about-reference.about-page .about-facts > div { transition: translate 200ms ease; }
+.about-reference .about-facts svg { transition: rotate 200ms ease, color 200ms ease; }
+@media (hover: hover) {
+  .about-reference .about-education-history li:hover .about-education-year { animation-play-state: paused; transform: translateY(-2px) rotate(-2deg); box-shadow: 3px 5px 0 #b8ccd4, 0 8px 14px #17354e26; }
+  .about-reference.about-page .about-portrait:hover { rotate: -5deg; translate: 0 -3px; box-shadow: 0 12px 24px #27445e1c; }
+  .about-reference.about-page .about-facts > div:hover { translate: 3px 0; }
+  .about-reference .about-facts > div:hover svg { rotate: -10deg; color: #d87870; }
+  .about-reference .about-education-history li:hover .about-education-marker { box-shadow: 0 0 0 4px #dceaf5; }
+}
+.about-reference .about-education-history h3 { margin: 7px 0 0; color: #294b64; font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.75; }
+.about-reference .about-circuit-art { position: relative; width: min(220px, 100%); aspect-ratio: 1; justify-self: center; }
+.about-reference .about-circuit-chip { position: absolute; inset: 55px; display: grid; place-items: center; background: #e8f5ee; border: 1px solid #b9d9cc; border-radius: 8px; box-shadow: 5px 6px 0 #d9eae3; rotate: -8deg; color: #477d6a; }
+.about-reference .about-circuit-chip svg { width: 60%; height: 60%; }
+.about-reference .about-circuit-wire { position: absolute; border: 2px solid #a5c9dd; border-radius: 6px; }
+.about-reference .about-circuit-wire::after { content: ""; position: absolute; width: 7px; height: 7px; border: 2px solid #89b7d0; border-radius: 2px; background: #f8fbfd; }
+.about-reference .wire-top { top: 15px; left: 65px; width: 50px; height: 60px; border-right: 0; border-bottom: 0; }
+.about-reference .wire-top::after { top: -5px; right: -3px; }
+.about-reference .wire-left { top: 82px; left: 12px; width: 60px; height: 52px; border-left: 0; border-bottom: 0; }
+.about-reference .wire-left::after { top: -5px; left: -4px; }
+.about-reference .wire-right { top: 85px; right: 16px; width: 55px; height: 35px; border-left: 0; border-top: 0; }
+.about-reference .wire-right::after { top: -4px; right: -5px; }
+.about-reference .wire-bottom { bottom: 17px; right: 71px; width: 44px; height: 57px; border-left: 0; border-top: 0; }
+.about-reference .wire-bottom::after { bottom: -5px; left: -3px; }
+.about-reference .about-circuit-code { position: absolute; right: 6px; bottom: 17px; display: grid; place-items: center; width: 48px; height: 40px; border: 1px solid #c8dbef; border-radius: 8px; background: #edf4ff; color: #497ca4; rotate: 8deg; }
+.about-reference .about-circuit-code svg { width: 28px; height: 28px; }
+.about-reference .about-circuit-spark { position: absolute; right: 16px; top: 12px; width: 26px; height: 26px; color: #e1ad5d; }
+.about-reference .about-circuit-board { position: absolute; left: 17px; bottom: 20px; width: 40px; height: 40px; rotate: -10deg; }
+@media (max-width: 900px) {
+  .about-reference.about-page .about-layout { gap: 32px; }
+  .about-reference.about-page .about-education { grid-template-columns: 36px minmax(0, 1fr); }
+}
+@media (max-width: 680px) {
+  .about-reference.about-page .about-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .about-reference.about-page .about-portrait { width: min(195px, calc(100% - 32px)); margin-top: 8px; }
+  .about-reference.about-page h1 { font-size: 40px; }
+  .about-reference.about-page .about-copy h2 { font-size: 29px; }
+  .about-reference.about-page .about-facts > div { grid-template-columns: 20px 80px minmax(0, 1fr); gap: 8px; }
+  .about-reference .about-paperplane { bottom: -22px; height: 32px; }
+  .about-reference .about-paperplane > svg:first-child { width: 18px; height: 18px; }
+  .about-reference .about-paperplane > svg:last-child { width: 28px; height: 28px; }
+  .about-reference.about-page .about-journey { margin-top: 32px; }
+  .about-reference .about-journey ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .about-reference.about-page .about-journey li { padding: 14px 12px; }
+  .about-reference.about-page .about-journey h3 { font-size: 21px; }
+  .about-reference.about-page .about-education { grid-template-columns: 32px minmax(0, 1fr); gap: 10px; padding: 18px 14px 32px; }
+  .about-reference .about-education::after { left: 14px; right: 14px; bottom: 14px; }
+  .about-reference .about-education-history { padding-left: 58px; gap: 30px; }
+  .about-reference .about-education-history::before { left: 21px; }
+  .about-reference .about-education-year { font-size: 13px; }
+  .about-reference .about-education-marker { left: -43px; width: 14px; height: 14px; }
+  .about-reference .about-education-marker svg { width: 24px; height: 24px; }
+  .about-reference .about-circuit-art { grid-column: 2; width: min(180px, 100%); margin-top: 8px; }
+  .about-reference .about-circuit-chip { inset: 47px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-reference.about-page .about-portrait { animation: none; }
+  .about-reference .about-education.is-revealed .about-education-year { animation: none; }
+  .about-reference .about-education-history li:hover .about-education-year { transform: none; }
+  .about-reference .about-inner, .about-reference .about-education-history::before { animation: none; }
+  .about-reference.about-page .about-portrait:hover { rotate: -8deg; translate: none; }
+  .about-reference.about-page .about-facts > div:hover, .about-reference .about-education-history li:hover .about-education-year { translate: none; }
+  .about-reference .about-facts > div:hover svg, .about-reference .about-education-history li:hover .about-education-marker { rotate: none; translate: none; }
+}

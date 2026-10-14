@@ -1,0 +1,7 @@
+.text-morph { position: relative; display: inline-block; max-width: 100%; vertical-align: middle; }
+.text-morph-filter { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+.morph-stage { display: inline-grid; max-width: 100%; align-items: center; }
+.morph-sizer, .morph-layer { grid-area: 1 / 1; white-space: nowrap; }
+.morph-sizer { visibility: hidden; }
+.morph-layer { text-align: center; transform-origin: center; }
+.morph-next { opacity: 0; }

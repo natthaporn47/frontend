@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageEffects from "./components/PageEffects";
+import SiteFooter from "./components/SiteFooter";
 import "./components/PageEffects.css";
 import "./components/PortfolioInteractions.css";
 
@@ -18,6 +19,8 @@ import "./pages/HomeReference.css";
 import "./pages/SkillsReference.css";
 import "./components/NavbarCapsule.css";
 import "./pages/ContactReference.css";
+import "./pages/AboutReference.css";
+import "./pages/ProjectsReference.css";
 
 
 function App() {
@@ -35,6 +38,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
       </Routes>
+      <SiteFooter />
       </PageEffects>
     </BrowserRouter>
   );

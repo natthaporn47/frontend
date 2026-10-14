@@ -1,0 +1,5 @@
+.letter-cascade { color: inherit; white-space: normal; }
+.cascade-word { display: inline-block; white-space: nowrap; }
+.cascade-letter { position: relative; display: inline-flex; perspective: 500px; }
+.cascade-front, .cascade-echo { display: inline-block; backface-visibility: hidden; color: inherit; }
+.cascade-echo { position: absolute; inset: 0; pointer-events: none; }

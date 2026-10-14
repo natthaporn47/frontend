@@ -10,7 +10,7 @@ body:has(.home-root) .menu a { font-size: 12px; }
 .home-root .hero-text { position: relative; z-index: 2; width: 46%; max-width: 510px; min-width: 0; }
 .home-root .hello { margin-bottom: 8px; font: 24px/1.2 "Patrick Hand", cursive; }
 .home-root .hero h1 { font: 68px/0.95 "Patrick Hand", cursive; letter-spacing: 0; }
-.home-root .hero h1 span:last-child { color: var(--home-blue); }
+.home-root .hero h1 > span:last-child { color: var(--home-blue); }
 .home-root .hero h2 { display: inline; font-size: 13px; line-height: 2.2; font-weight: 500; background: #e9f3fc; padding: 3px 7px; border-left: 2px solid #8ab4d9; box-decoration-break: clone; }
 .home-root .hero-personal-intro { color: var(--home-muted); font-size: 13px; line-height: 1.9; margin: 18px 0 0; }
 .home-root .typing-line { margin: 10px 0 0; min-height: 27px; color: #5c88ac; font: 12px/1.6 Arial, sans-serif; }

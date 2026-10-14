@@ -1,0 +1,8 @@
+.page-content:has(> .site-footer) { display: flex; flex-direction: column; min-height: calc(100svh - 74px); background: #f9fcff; }
+.page-content:has(> .skills-reference) { background: #f8fbfd; }
+.page-content:has(> .site-footer) > main { flex: 1; }
+.site-footer { width: min(1160px, calc(100% - 96px)); margin: auto auto 0; padding: 20px 0; border-top: 1px solid #cbdce9; background: transparent; color: #56748e; font: 18px/1.2 "Patrick Hand", cursive; }
+.site-footer.scroll-reveal { transition: opacity 650ms ease var(--reveal-delay, 0ms); }
+.site-footer.scroll-reveal.is-revealed { animation: page-item-pop 750ms var(--reveal-delay, 0ms) both; }
+@media (max-width: 1100px) { .site-footer { width: calc(100% - 80px); } }
+@media (max-width: 680px) { .site-footer { width: calc(100% - 40px); } }

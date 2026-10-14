@@ -36,7 +36,7 @@
     line-height: 0.93;
 }
 
-.hero h1 span:last-child { color: #28508d; }
+.hero h1 > span:last-child { color: #28508d; }
 
 .hero h2 {
     margin: 1rem 0 0.375rem;

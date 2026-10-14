@@ -1,0 +1,4 @@
+.text-repel { display: inline-block; max-width: 100%; color: inherit; white-space: normal; }
+.repel-word { display: inline-block; white-space: nowrap; }
+.repel-anchor, .repel-letter { display: inline-block; }
+.repel-letter { color: inherit; transform-origin: center; }
